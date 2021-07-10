@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>js事件</title>
+    <script>
+        function f1(){
+            console.log("调用了一次函数")
+        }
+
+        function f2() {
+            return false;
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <button onclick="f1()">按钮1</button>
+    <button>按钮2</button>
+
+    <input type="text" onkeydown="f1()">
+    <input type="text" onfocus="f1()">
+
+    <form action="#" onsubmit="return f1()">
+        姓名：<input type="text"> <br>
+        密码：<input type="password"> <br>
+        年龄：<input type="text"> <br>
+        <button ></button>
+    </form>
+</body>
+</html>

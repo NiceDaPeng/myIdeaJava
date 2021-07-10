@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        p+a{
+            color:red;
+        }
+
+        p~a{
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+
+<p>
+    <a href="">我是p的子元素a</a>
+</p>
+
+<a href=""> 我是p的兄弟元素a</a>
+
+<p></p>
+<li>
+    <a href=""> 我是p下的兄弟元素li下的a</a>
+</li>
+<a href="">我是li的相邻的a</a>
+</body>
+</html>

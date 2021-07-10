@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--在单选框和复选框中，所有项目的name必须一致
+    在表单标签中，除了按钮标签以外的标签，都可以通过value来指定需要提交给服务器的数据
+    如何给表单添加边框-->
+<form action="https://www.baidu.com">
+    <fieldset>
+        <legend>注册界面</legend>
+    <p>
+        账号：<input type="text" name="uname" id="uname">
+    </p>
+    <p>密码：
+        <input type="password" name="password" id="password">
+    </p>
+        性别：
+        <input type="radio" name="gender" value="man">男
+        <input type="radio" name="gender" value="women">女
+        <input type="radio" name="gender" checked="checked" value="mimi">保密
+    <p>
+        爱好：
+        <input type="checkbox" name="sport" value="bas">篮球
+        <input type="checkbox" checked="checked" name="sport" value="football">足球
+        <input type="checkbox" name="sport" value>排球
+        <input type="checkbox" name="sport">侃大山
+    </p>
+    <p>
+        个人简介：
+        <textarea cols="30" rows="10" name="intrduce">请输入您的简介</textarea>
+    </p>
+    <p>
+        生日：&emsp;&emsp;
+        <input type="date" name="birthday">
+    </p>
+    <p>
+        邮箱：&emsp;&emsp;
+        <input type="email" id="email" name="email">
+    </p>
+    <p>
+        手机：&emsp;&emsp;
+        <input type="number" id="phone" name="phone">
+    </p>
+    <p>
+    <input type="submit" value="注册">
+        &emsp;&emsp;&emsp;&emsp;
+    <input type="reset" value="清空">
+    </p>
+    </fieldset>
+</form>
+</body>
+</html>

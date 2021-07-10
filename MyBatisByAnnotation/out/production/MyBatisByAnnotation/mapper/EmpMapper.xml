@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dao.EmpDao">
+    <resultMap id="selectEmp" type="domain.Emp">
+        <id property="empno" column="empno"></id>
+        <result property="ename" column="ename"></result>
+        <result property="sal" column="sal"></result>
+        <result property="job" column="job"></result>
+        <association property="dept" javaType="domain.Dept" column="deptno" select="selectDept"></association>
+    </resultMap>
+    <!--赋值标签就是帮上面的进行查询部门信息-->
+    <select id="selectDept" resultType="domain.Dept">
+        select * from dept where deptno=#{deptno}
+    </select>
+    <select id="selectOne" resultMap="selectEmp">
+      select * from emp where empno=#{empno}
+    </select>
+</mapper>

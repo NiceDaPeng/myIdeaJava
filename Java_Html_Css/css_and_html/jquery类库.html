@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script type="text/javascript" src="../libs/jquery-1.7.2.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      $("#btn1").click(function(){
+        alert("jquery核心函数被加载了");
+      });
+
+      $("#username").blur(function(){
+          var str=/^\w{5,12}$/;
+          var val = $("#username").val();
+          if (str.test(val)){
+              var $img = $("<img src=\"../images/right.jpg\" alt=\"loading\" width='12px'>");
+              $img.appendTo("span");
+          }
+      });
+    });
+
+    window.onload=function(){
+      var btEle = document.getElementById("btn1");
+      var ulE = document.createElement("ul");
+      ulE.innerHTML="helloworld";
+      document.body.appendChild(ulE);
+    };
+  </script>
+</head>
+<body>
+<input type="text" id="username">
+<span></span>
+<button id="btn1">提交</button>
+</body>
+</html>

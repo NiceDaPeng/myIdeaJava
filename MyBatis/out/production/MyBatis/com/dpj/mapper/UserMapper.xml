@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dpj.dao.UserDao">
+    <insert id="insert">
+        INSERT INTO USER VALUES('qianqi','777');
+    </insert>
+
+    <select id="selectByOrder" resultType="com.dpj.domain.User">
+        select * from user order by upassword ${flag}
+    </select>
+
+    <select id="selectAll" resultType="com.dpj.domain.User">
+        SELECT UNAME,UPASSWORD FROM USER
+    </select>
+
+    <select id="selectCount" resultType="int">
+        SELECT COUNT(*) FROM USER
+    </select>
+
+    <select id="selectScalar" resultType="hashmap">
+        SELECT UNAME,COUNT(*) FROM USER GROUP BY UNAME;
+    </select>
+
+    <update id="update">
+        UPDATE USER SET UPASSWORD=#{upassword} where uname=#{uname}
+    </update>
+    
+
+
+</mapper>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数配合this关键字创建对象</title>
+    <script>
+        //像一个模板，通过这个模板我们可以创建很多对象
+        function Car(cname, color, cprice) {
+            this.cname = cname;
+            this.color = color;
+            this.cprice = cprice;
+            // this.getcname=function () {
+            //     return this.cname;
+            // }
+        }
+        Car.prototype.getcname=function () {
+            return this.cname;
+        }
+
+        Car.prototype.cname="bmw";
+
+        var car1 = new Car("qq","红色",60000);
+        var car2 = new Car("bmw","红色",120000);
+        var f1 = car1.getcname;
+        var f2 = car2.getcname;
+        var f3 = car1.cname;
+        var f4 = car2.cname;
+        console.log(f1 == f2);
+        console.log(f3==f4);
+        // var car3 = {cname:"qq",color:"红色",cprice:60000};
+
+        console.log(car1.getcname());
+        console.log(car2.getcname());
+        //如果想要频繁的创建某个对象，那么我们可以使用函数配合this关键字来创建对象，这样每个对象都有这几个属性
+        //如果我们只需要一个对象，那么我们可以使用var car2 = {cname:"qq",color:"红色",cprice:60000};方式。
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

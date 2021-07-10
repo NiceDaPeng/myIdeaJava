@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+
+    <servlet>
+        <servlet-name>UserController</servlet-name>
+        <servlet-class>controller.UserController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserController</servlet-name>
+        <url-pattern>/userController</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CategoryController</servlet-name>
+        <servlet-class>controller.CategoryController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CategoryController</servlet-name>
+        <url-pattern>/categoryController</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>SelectCommodityController</servlet-name>
+        <servlet-class>controller.SelectCommodityController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SelectCommodityController</servlet-name>
+        <url-pattern>/selectCommodityController</url-pattern>
+    </servlet-mapping>
+
+    <!--找到判断继续购物还是结算清单的类-->
+    <servlet>
+        <servlet-name>JudgeChangeController</servlet-name>
+        <servlet-class>controller.JudgeChangeController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>JudgeChangeController</servlet-name>
+        <url-pattern>/judgeChangeController</url-pattern>
+    </servlet-mapping>
+
+    <!--结账-->
+    <servlet>
+        <servlet-name>CheckoutPageController</servlet-name>
+        <servlet-class>controller.CheckoutPageController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CheckoutPageController</servlet-name>
+        <url-pattern>/checkoutPageController</url-pattern>
+    </servlet-mapping>
+</web-app>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script type="text/javascript">
+    function fun(){
+      alert("女神发生改变了");
+    }
+    window.onload=function(){
+      var sel = document.getElementById("sel");
+      sel.onchange=function(){
+        alert("女神发生改变了");
+      }
+    }
+  </script>
+</head>
+<body>
+请选择你的女神：
+<select name="" id="sel2" onchange="fun();">
+  <option value="赵丽颖">赵丽颖</option>
+  <option value="林青霞">林青霞</option>
+  <option value="梅艳芳">梅艳芳</option>
+  <option value="咔嚓咔嚓">咔嚓咔嚓</option>
+</select>
+
+<select name="" id="sel" onchange="fun();">
+  <option value="赵丽颖">赵丽颖</option>
+  <option value="林青霞">林青霞</option>
+  <option value="梅艳芳">梅艳芳</option>
+  <option value="咔嚓咔嚓">咔嚓咔嚓</option>
+</select>
+</body>
+</html>

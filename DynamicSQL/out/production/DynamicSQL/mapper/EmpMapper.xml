@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.EmpDao">
+
+    <select id="selectDept" resultType="int">
+        select distinct deptno from emp
+    </select>
+
+    <select id="selectJob" resultType="string">
+        select distinct job from emp
+    </select>
+
+    <select id="selectAll" resultType="domain.Emp">
+        select * from emp
+        <where>
+            <if test="deptno != null and deptno !='' ">
+                and deptno = #{deptno}
+            </if>
+
+            <if test="job != null and job != '' ">
+                and job = #{job}
+            </if>
+        </where>
+    </select>
+    <!--编写一条查询所有员工信息的SQL-->
+    <select id="selectAllEmp" resultType="domain.Emp">
+        select * from emp
+    </select>
+
+    <!--编写一条sql用来更新信息-->
+    <update id="updateEmp">
+        update emp set job='Manager' where empno in
+        <foreach collection="list" item="empno" open="(" close=")" separator="," index="i">
+            #{empno}
+        </foreach>
+    </update>
+</mapper>

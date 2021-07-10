@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+
+    </style>
+    <script type="text/javascript" src="../../libs/jquery-1.7.2.js"></script>
+    <script type="text/javascript">
+        // $(function () {
+        //     $("#bt1:eq(0)").click(function () {
+        //         $("select:eq(0) option:selected").appendTo($("select:eq(1)"));
+        //     });
+        // });
+        $(function () {
+
+            var deleteEle=function () {
+                var $partr = $(this).parent().parent();
+                var name = $partr.find("td:first").text();
+                if (confirm("你确定要删除"+name+"吗？")) {
+                    $partr.remove();
+                }
+                return false;
+            }
+
+            $("#submit").click(function () {
+                var $name = $("#empname").val();
+                var $email = $("#empemail").val();
+                var $empsalary = $("#empsalary").val();
+                var $trObj = $("<tr bgcolor=\"white\">" +
+                    "            <td>" + $name + "</td>" +
+                    "            <td>" + $email + "</td>" +
+                    "            <td>" + $empsalary + "</td>" +
+                    "            <td><a href=\"#\">delete</a></td>" +
+                    "        </tr>");
+                $trObj.appendTo($("#employee"));
+                $trObj.find("a").click(deleteEle);
+            });
+
+            //给删除的a标签绑定删除事件
+            $("a").click(deleteEle);
+        });
+    </script>
+</head>
+<body>
+<div>
+    <table border="1px" bgcolor="black" cellspacing="0px" align="center" id="employee">
+        <caption>
+            <h3>员工信息</h3>
+        </caption>
+        <tr bgcolor="white">
+            <th>Name</th>
+            <th>email</th>
+            <th>salary</th>
+            <th>操作</th>
+        </tr>
+        <tr bgcolor="white">
+            <td>john</td>
+            <td>124@123.com</td>
+            <td>9000</td>
+            <td><a href="deleteEmp?id=01">delete</a></td>
+        </tr>
+        <tr bgcolor="white">
+            <td>jam</td>
+            <td>989@123.com</td>
+            <td>8900</td>
+            <td><a href="deleteEmp?id=02">delete</a></td>
+        </tr>
+        <tr bgcolor="white">
+            <td>lily</td>
+            <td>978@123.com</td>
+            <td>15000</td>
+            <td><a href="deleteEmp?id=03">delete</a></td>
+        </tr>
+    </table>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div align="center">
+    <form action="#">
+        <table border="1px" cellspacing="0px" bgcolor="black">
+            <tr bgcolor="white">
+                <td>用户名</td>
+                <td><input type="text" id="empname"></td>
+            </tr>
+            <tr bgcolor="white">
+                <td>邮箱</td>
+                <td>
+                    <input type="text" id="empemail">
+                </td>
+            </tr>
+            <tr bgcolor="white">
+                <td>工资</td>
+                <td><input type="text" id="empsalary"></td>
+            </tr>
+        </table>
+        <div> <button id="submit">提交</button></div>
+    </form>
+</div>
+</body>
+</html>

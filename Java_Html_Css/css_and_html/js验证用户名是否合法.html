@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script type="text/javascript">
+    function butonclick(){
+      var usernameObj = document.getElementById("username");
+      var namevalue=usernameObj.value;
+      // var pat=/^\w{5,12}$/;
+      //检查是否包含一个a
+      //   var pat = /a/;
+        //检查是否包含至少一个a
+     // var pat = /a+/;
+        //检查是否包含0-多个a
+        var pat=/a{3}/;
+      if (pat.test(namevalue)){
+        alert("用户名合法");
+      } else {
+        alert("用户名不合法");
+      }
+    }
+  </script>
+</head>
+<body>
+<input type="text" value="请输入用户名长度为5-12位的数字或字母或下划线" id="username">
+<button onclick="butonclick();" >登录</button>
+</body>
+</html>

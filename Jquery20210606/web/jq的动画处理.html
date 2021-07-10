@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#d1").css({
+                width:'100px',
+                height:'100px',
+                background:'red',
+                position:'absolute',
+                left:0
+            });
+
+            $("#btn1").click(function () {
+                ////在2秒内将id为d1的div的宽度变为500，高度为500，左移动100px完成更改以后，执行里面的函数
+                $("#d1").animate({width:500,height:500,left:'100px'},2000,function () {
+                    alert('OK');
+                })
+            })
+        })
+
+    </script>
+</head>
+<body>
+
+<button id="btn1">按钮</button>
+<hr>
+<div id="d1"></div>
+</body>
+</html>

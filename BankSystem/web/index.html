@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <link rel="stylesheet" href="css/index.css">
+    <base target="_blank">
+    <style type="text/css" >
+        div#bottom-text{
+
+            position:absolute;
+            width:300px;
+            height:100px;
+            top:50%;
+            left:50%;
+            margin-top:-75px;
+            marginn-left:-150px;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function () {
+            $("#btnone").click(function () {
+                alert($(":input:first").val());
+            });
+        })
+    </script>
+</head>
+<body>
+<div class="fl bg" id="bottom-text">
+    <form action="#">
+        username:<input type="text"><br>
+        password:<input type="password"> <br>
+        <div id="btn" class="fl">
+        <input type="reset" value="重置"></div>
+        <div class="fr">
+        <input type="submit" value="登录" id="btnone"></div>
+
+    </form>
+</div>
+</body>
+</html>

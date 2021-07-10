@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>复选框全选</title>
+    <style>
+        .datas,.datas td{
+            border:1px solid orange;
+            text-align:center;
+        }
+        .datas{
+            width:800px;
+            border-collapse:collapse;
+        }
+        .datas td{
+            height:30px;
+        }
+    </style>
+    <script>
+        window.onload =function (ev) {
+            var checkAllBtn = document.getElementById("checkAllBtn");
+            checkAllBtn.onclick = function (ev1) {
+                var checkedAll = checkAllBtn.checked;
+                var checkboxs = document.getElementsByTagName("input");
+                for (var i = 0; i < checkboxs.length; i++) {
+                    checkboxs[i].checked = checkedAll;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+
+<table class="datas" align="center">
+    <thead>
+        <td><input type="checkbox" id="checkAllBtn" ></td>
+        <td>汽车编号</td>
+        <td>汽车名称</td>
+        <td>汽车颜色</td>
+        <td>汽车价格</td>
+        <td>操作</td>
+    </thead>
+    <tbody>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>1001</td>
+        <td>宝马</td>
+        <td>红色</td>
+        <td>300000</td>
+        <td>
+            <a href="#">编辑</a>
+            <a href="#">删除</a>
+        </td>
+    </tr><tr>
+        <td><input type="checkbox"></td>
+        <td>1001</td>
+        <td>宝马</td>
+        <td>红色</td>
+        <td>300000</td>
+        <td>
+            <a href="#">编辑</a>
+            <a href="#">删除</a>
+        </td>
+    </tr><tr>
+        <td><input type="checkbox"></td>
+        <td>1001</td>
+        <td>宝马</td>
+        <td>红色</td>
+        <td>300000</td>
+        <td>
+            <a href="#">编辑</a>
+            <a href="#">删除</a>
+        </td>
+    </tr><tr>
+        <td><input type="checkbox"></td>
+        <td>1001</td>
+        <td>宝马</td>
+        <td>红色</td>
+        <td>300000</td>
+        <td>
+            <a href="#">编辑</a>
+            <a href="#">删除</a>
+        </td>
+    </tr><tr>
+        <td><input type="checkbox"></td>
+        <td>1001</td>
+        <td>宝马</td>
+        <td>红色</td>
+        <td>300000</td>
+        <td>
+            <a href="#">编辑</a>
+            <a href="#">删除</a>
+        </td>
+    </tr><tr>
+        <td><input type="checkbox"></td>
+        <td>1001</td>
+        <td>宝马</td>
+        <td>红色</td>
+        <td>300000</td>
+        <td>
+            <a href="#">编辑</a>
+            <a href="#">删除</a>
+        </td>
+    </tr><tr>
+        <td><input type="checkbox"></td>
+        <td>1001</td>
+        <td>宝马</td>
+        <td>红色</td>
+        <td>300000</td>
+        <td>
+            <a href="#">编辑</a>
+            <a href="#">删除</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/FirstBankSystem.iml" filepath="$PROJECT_DIR$/FirstBankSystem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JDBCExprice/JDBCExprice.iml" filepath="$PROJECT_DIR$/JDBCExprice/JDBCExprice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JDBCUtils/JDBCUtils.iml" filepath="$PROJECT_DIR$/JDBCUtils/JDBCUtils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LikeAndPaging/LikeAndPaging.iml" filepath="$PROJECT_DIR$/LikeAndPaging/LikeAndPaging.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TestInnerJoin/TestInnerJoin.iml" filepath="$PROJECT_DIR$/TestInnerJoin/TestInnerJoin.iml" />
+    </modules>
+  </component>
+</project>

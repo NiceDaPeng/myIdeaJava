@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>级联操作（省市、部门）</title>
+    <script type="text/javascript">
+
+      var data = [
+          {
+              key:'河南省',
+              values:['商丘市','郑州市','安阳市','洛阳市']
+          },
+          {
+              key:'安徽',
+              values:['合肥','芜湖','马鞍山']
+          },
+          {
+              key:'江苏',
+              values:['无锡','苏州','南京']
+          }
+      ]
+        window.onload = function () {
+            var province = document.getElementById("province");
+            var cityEle = document.getElementById("city");
+            proving.onchange=function () {
+                var pro_value = this.value;
+                if (pro_value == '选择省份') {
+                    cityEle.innerHTML='';
+                    var newOption = document.createElement("option");
+                    newOption.innerHTML = '请选择城市';
+                    cityEle.appendChild(newOption);
+                } else {
+                    //根据选择的省份找到相应的城市
+                    //将城市信息写入到下拉框
+                    for (var i = 0; i < data.length;i++){
+                        if (data[i].key == pro_value) {
+                            var cityarray = data[i].values;
+
+                            // cityEle.options.length = 0;
+                            cityEle.innerHTML = '';
+                            for (var j = 0; j < cityarray.length; j++) {
+                                var city = cityarray[i];
+                                var newOption = document.createElement("option");
+                                newOption.innerHTML = city;
+                                cityEle.appendChild(newOption);
+                            }
+                            break;
+                        }
+
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+
+<select name="" id="province">
+    <option value="">==选择省份==</option>
+    <option value="">河南</option>
+    <option value="">安徽</option>
+    <option value="">江苏</option>
+</select>
+<select name="" id="city">
+    <option value="">==选择城市==</option>
+</select>
+</body>
+</html>

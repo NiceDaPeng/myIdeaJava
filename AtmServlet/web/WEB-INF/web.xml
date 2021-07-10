@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <servlet>
+        <servlet-name>login</servlet-name>
+        <servlet-class>controller.LoginController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>login</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>query</servlet-name>
+        <servlet-class>controller.QueryController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>query</servlet-name>
+        <url-pattern>/query</url-pattern>
+    </servlet-mapping>
+
+    <!--<servlet>-->
+        <!--<servlet-name>despot</servlet-name>-->
+        <!--<servlet-class>controller.DespotController</servlet-class>-->
+    <!--</servlet>-->
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>despot</servlet-name>-->
+        <!--<url-pattern>/despot</url-pattern>-->
+    <!--</servlet-mapping>-->
+
+    <servlet>
+        <servlet-name>doDespot</servlet-name>
+        <servlet-class>controller.DoDespotController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>doDespot</servlet-name>
+        <url-pattern>/doDespot</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>withDrawal</servlet-name>
+        <servlet-class>controller.WithDrawalController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>withDrawal</servlet-name>
+        <url-pattern>/withDrawal</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>doWithDrawal</servlet-name>
+        <servlet-class>controller.DoWithDrawalController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>doWithDrawal</servlet-name>
+        <url-pattern>/doWithDrawal</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>transfer</servlet-name>
+        <servlet-class>controller.TransferController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>transfer</servlet-name>
+        <url-pattern>/transfer</url-pattern>
+    </servlet-mapping>
+
+
+    <!--<servlet>-->
+        <!--<servlet-name>doTransfer</servlet-name>-->
+        <!--<servlet-class>controller.DoTransferController</servlet-class>-->
+    <!--</servlet>-->
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>doTransfer</servlet-name>-->
+        <!--<url-pattern>/doTransfer</url-pattern>-->
+    <!--</servlet-mapping>-->
+
+
+</web-app>

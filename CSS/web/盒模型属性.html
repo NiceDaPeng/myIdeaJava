@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>盒模型属性</title>
+    <style type="text/css">
+        .d1{
+            width: 100px;
+            height:100px;
+            background:red;
+            padding: 10px;
+            margin-right:10px;
+            overflow:auto;
+
+        }
+
+        .d2{
+            width:100px;
+            height:100px;
+            background:pink;
+            /*不渲染这个元素，如果将display设置为none，那么这个元素在浏览器就不会显示了*/
+            /*display: none;*/
+
+        }
+
+        div{
+            /*将div设置为行元素，多个div共处一行。*/
+            /*display:inline;*/
+            /*将保留div的块元素的宽高，而且又可以独占一行。*/
+            /*display:inline-block;*/
+            /*display:table;*/
+        }
+
+        .d3{
+            width:80%;
+            height:100px;
+            background:blue;
+            min-width:800px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="d1">
+        星期一星期一
+        星期一星期一
+        星期一星期一
+        星期一星期一
+        星期一星期一
+        星期一星期一
+
+    </div>
+    <div class="d2">星期二</div>
+    <div class="d3">星期二</div>
+</body>
+</html>

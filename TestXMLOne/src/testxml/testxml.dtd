@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!ELEMENT country (city*)>
+<!ELEMENT city (xian*)>
+<!ELEMENT xian (zhen*)>
+<!ELEMENT zhen (cun*)>
+<!ELEMENT cun (#PCDATA)>
+
+<!ATTLIST country name CDATA #IMPLIED >
+<!ATTLIST city name CDATA #IMPLIED>
+<!ATTLIST xian name CDATA #IMPLIED>
+<!ATTLIST zhen name CDATA #IMPLIED>
+<!ATTLIST cun
+    name CDATA #IMPLIED
+    id CDATA #IMPLIED
+>

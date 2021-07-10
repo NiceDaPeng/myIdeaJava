@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE country SYSTEM testxml.dtd>
+<country name="中国">
+    <city>
+        <xian name="">
+            <zhen name="">
+                <cun id="" name="" count="">
+                    <min>
+                        <name></name>
+                        <count></count>
+                    </min>
+                </cun>
+            </zhen>
+            <zhen name="">
+                <cun id="" name="">
+
+                </cun>
+                <cun id="" name="">
+
+                </cun>
+            </zhen>
+        </xian>
+        <xian name="">
+            <zhen name="">
+                <cun id="" name="">
+
+                </cun>
+            </zhen>
+        </xian>
+    </city>
+
+    <city>
+        <xian name="">
+            <zhen name="">
+                <cun id="" name="">
+
+                </cun>
+            </zhen>
+        </xian>
+    </city>
+</country>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        div{
+            width: 50px;
+            height: 100px;
+
+        }
+        div.addcolor{
+            background-color: red;
+
+        }
+        div.addbgcolor{
+            border-color: blanchedalmond;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function(){
+            var $div=$("div");
+            $("#bt1").click(function(){
+                $div.addClass(".addbgcolor");
+            })
+        })
+    </script>
+</head>
+<body>
+<div class="divone">
+</div>
+    <button id="bt1">添加背景颜色</button>
+<br>
+    <button id="bt2">删除背景颜色</button>
+<br>
+    <button id="bt3">有就删除，没有就添加</button>
+<br>
+    <button id="bt4">设置获取坐标</button>
+</body>
+</html>

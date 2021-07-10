@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字体颜色</title>
+    <style>
+        p{
+            color:rgb(0,0,255);
+        }
+        p.c1{
+            color:rgb(255,0,255);
+        }
+        p[name=p2]{
+            color: #00ddaa;
+        }
+        p>a{
+            color:#ee3300;
+        }
+        p a{
+            color:#ddeeff;
+        }
+    </style>
+</head>
+<body>
+
+
+    <p class="c1">Good Good Study!Day Day Up!! <br>
+        <a href="#">我是p标签下的a标签</a>
+        <p>我是p下的p标签</p>
+        <a href="#">我是p标签下的a标签</a>
+    </p>
+    <p name="p2">Good Good Study!Day Day Up!!</p>
+    <p>Good Good Study!Day Day Up!!</p>
+    <p>Good Good Study!Day Day Up!!</p>
+    <p>Good Good Study!Day Day Up!!</p>
+</body>
+</html>

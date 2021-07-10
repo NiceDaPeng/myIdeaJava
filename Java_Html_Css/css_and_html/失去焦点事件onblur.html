@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script type="text/javascript">
+    function fun(){
+      console.log("静态获取失去焦点事件")
+    }
+    window.onload = function(){
+      var passEle = document.getElementById("pass");
+      passEle.onblur=function(){
+        console.log("这是动态失去焦点事件");
+      }
+    }
+  </script>
+</head>
+<body>
+用户名：<input type="text" onblur="fun()">
+密码：<input id="pass" type="password">
+</body>
+</html>

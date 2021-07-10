@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/HomeWord_06/HomeWork_96.iml" filepath="$PROJECT_DIR$/HomeWord_06/HomeWork_96.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ProjectOne/ProjectOne.iml" filepath="$PROJECT_DIR$/ProjectOne/ProjectOne.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ProjectTwo/ProjectTwo.iml" filepath="$PROJECT_DIR$/ProjectTwo/ProjectTwo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TestAnnotation/TestAnnotation.iml" filepath="$PROJECT_DIR$/TestAnnotation/TestAnnotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TestArray/TestArray.iml" filepath="$PROJECT_DIR$/TestArray/TestArray.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TestArrayList/TestArrayList.iml" filepath="$PROJECT_DIR$/TestArrayList/TestArrayList.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TestClass/TestClass.iml" filepath="$PROJECT_DIR$/TestClass/TestClass.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TestCollectioHomeWork/TestCollectioHomeWork.iml" filepath="$PROJECT_DIR$/TestCollectioHomeWork/TestCollectioHomeWork.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TestEnum/TestEnum.iml" filepath="$PROJECT_DIR$/TestEnum/TestEnum.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TestException/TestException.iml" filepath="$PROJECT_DIR$/TestException/TestException.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TestIO/TestIO.iml" filepath="$PROJECT_DIR$/TestIO/TestIO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TestLambda/TestLambda.iml" filepath="$PROJECT_DIR$/TestLambda/TestLambda.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TestSendMoney/TestSendMoney.iml" filepath="$PROJECT_DIR$/TestSendMoney/TestSendMoney.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TestSet/TestSet.iml" filepath="$PROJECT_DIR$/TestSet/TestSet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TestThread/TestThread.iml" filepath="$PROJECT_DIR$/TestThread/TestThread.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TestUtil/TestUtil.iml" filepath="$PROJECT_DIR$/TestUtil/TestUtil.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <util:list id="list">
+            <value>nice</value>
+            <value>well</value>
+            <value>good</value>
+    </util:list>
+    <util:list id="list2">
+
+            <bean class="com.dpj.domain.Grade"/>
+            <bean class="com.dpj.domain.Grade"/>
+            <bean class="com.dpj.domain.Grade"/>
+
+    </util:list>
+    <util:map id="map">
+            <entry key="one">
+                <value>nice</value>
+            </entry>
+            <entry key="two">
+                <value>well</value>
+            </entry>
+            <entry key="three">
+                <value>good</value>
+            </entry>
+    </util:map>
+    <bean id="grade" class="com.dpj.domain.Grade"/>
+    <bean id="user" class="com.dpj.domain.User" p:name="linghuchong" p:password="aaaaaa" p:grade-ref="grade">
+        <property name="arrays" ref="list"/>
+        <property name="gradeList" ref="list2">
+        </property>
+        <property name="set">
+            <set>
+                <value>nice</value>
+                <value>good</value>
+                <value>well</value>
+            </set>
+        </property>
+        <property name="map" ref="map"/>
+        <property name="gradeMap">
+            <map>
+                <entry key="one">
+                    <bean class="com.dpj.domain.Grade"/>
+                </entry>
+                <entry key="two">
+                    <bean class="com.dpj.domain.Grade"/>
+                </entry>
+                <entry key="three">
+                    <bean class="com.dpj.domain.Grade"/>
+                </entry>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="myutil" class="com.dpj.util.MyUtil"/>
+    <bean id="conn" class="com.dpj.staticfactory.StaticFactoryBean" factory-method="getConn"/>
+    <bean id="instanceFactory" class="com.dpj.instanceFactoryBean.InstanceFactory"/>
+    <bean id="connInstance" factory-bean="instanceFactory" factory-method="getConn"/>
+    <bean id="initia" class="com.dpj.testinitializing.TestInitializingBean"/>
+    <bean id="myinit" class="com.dpj.myInit.MyInitializingBean" init-method="init"/>
+
+    <bean id="myconverter" class="com.dpj.testconverter.MyConverter"/>
+    <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <ref bean="myconverter"/>
+            </set>
+        </property>
+    </bean>
+    <bean id="user1" class="com.dpj.domain.User">
+        <property name="birthday" value="2021-6-26"/>
+    </bean>
+
+    <bean id="myBeanPostProcessor" class="com.dpj.myPostProcessor.MyPostProcessor"/>
+    <bean id="serviceProxy" class="com.dpj.proxy.UserServiceProxy"/>
+
+
+    <bean id="userService" class="com.dpj.dynamic.UserServiceImpl"/>
+    <bean id="userServiceDynamic" class="com.dpj.dynamic.UserServiceDynamic"/>
+    <aop:config>
+        <aop:pointcut id="cut" expression="execution(* com.dpj.dynamic.UserServiceImpl.*(..)) and args(String,String)"/>
+        <aop:advisor advice-ref="userServiceDynamic" pointcut-ref="cut"/>
+    </aop:config>
+
+
+</beans>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/07_servlet/07_servlet.iml" filepath="$PROJECT_DIR$/07_servlet/07_servlet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FirstWebPro/FirstWebPro.iml" filepath="$PROJECT_DIR$/FirstWebPro/FirstWebPro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MyFirstWeb.iml" filepath="$PROJECT_DIR$/MyFirstWeb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SecondWebPro/SecondWebPro.iml" filepath="$PROJECT_DIR$/SecondWebPro/SecondWebPro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bookstore/bookstore.iml" filepath="$PROJECT_DIR$/bookstore/bookstore.iml" />
+      <module fileurl="file://$PROJECT_DIR$/servlet_of_web/servlet_of_web.iml" filepath="$PROJECT_DIR$/servlet_of_web/servlet_of_web.iml" />
+    </modules>
+  </component>
+</project>

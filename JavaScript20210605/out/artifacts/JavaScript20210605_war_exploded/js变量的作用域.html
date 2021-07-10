@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js变量的作用域</title>
+    <script>
+        function f1() {
+            i = 10;
+            console.log(i);
+        }
+
+        function f2(){
+            console.log(i);
+        }
+
+        f1();
+        f2();
+
+        var f3 = function(){
+            console.log("dpj");
+        }
+
+        function f4(param){
+            //param里面存储的是一个函数，相当于param = function f3(){};
+            //所以我们可以通过param（）来调用这个函数。
+            param();
+            return param;
+        }
+
+        //在f4里面返回的是一个函数，然后赋值给了f5，相当于f5= function f3（）{}
+        //所以我们可以使用f5（）的方式来调用这个函数
+        var f5 = f4(f3);
+        f5();
+
+        (function f6(){
+            console.log("hahaha");
+        })();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

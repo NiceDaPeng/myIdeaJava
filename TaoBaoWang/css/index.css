@@ -1,0 +1,160 @@
+/*@规则 让css变的功能更强大。
+    @charset    设置样式表的编码  @charset "utf-8";
+    @import     导入其它样式文件  样式模块化就是通过它实现的
+    如果我们很多网页的一部分都是一样的，那么我们可以单独设置好这个部分为一个css文件，然后再css中引入这个css文件即可
+    @media：     媒体查询：在移动的开发中非常有用，移动设备几乎都是手机，手机屏幕的尺寸是不一样的，做移动端非常重要的概念就是做适配
+     做适配有一个非常重要的一个技术就是通过@media  通过@media可以查询用户的设备是多大的尺寸。如果宽是640的，那我就让它变成300等等。
+     不仅可以查尺寸还能查设备，是用手机还是电视打开？还是用pad打开的。
+
+     @font-face     ;自定义字体   通过这个可以给用户下载一个正确的字体 。
+*/
+@import "reset.css";
+/*将另一个css文件引入到当前css文件中*/
+
+@font-face {
+    font-family: 'iconfont';
+    src: url('../font/iconfont.ttf?t=1620705399292') format('truetype');
+}
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/*头部信息*/
+#headMessage li{
+    float:left;
+    line-height:35px;
+    padding:0 6px;
+    font-size:0;
+}
+
+#headMessage a{
+    color: #6c6c6c;
+    font-size:12px;
+}
+#headMessage a:hover{
+    color:#f40;
+}
+
+#headMessage a.login{
+    color:#f22e00;
+}
+#headMessage span{
+    font-size:12px;
+}
+
+#headMessage span.arrow{
+    margin-left: 7px;
+}
+
+#headMessage li strong{
+    font-size: 12px;
+    color:#f22e00;
+}
+
+#headMessage li span.store{
+    color:#9c9c9c;
+}
+
+#headMessage li.line{
+    font-size: 12px;
+    color:#ddd;
+    padding:0 5px;
+}
+
+/*头部搜索*/
+#headSearch{
+    background-color: #FFFFFF;
+    padding: 24px 0 10px 0;
+}
+#headSearch h1 a{
+    display:block;
+    width:190px;
+    height:58px;
+    background: url("../img/taobaologo1.png") center no-repeat;
+    text-indent: -9999px;
+    overflow: hidden;
+}
+
+#headSearch .code{
+    width:72px;
+    height:86px;
+    border: 1px solid #eee;
+    position:relative;
+    margin-right:110px;
+    text-align: center;
+}
+
+#headSearch .code img{
+    width:62px;
+    height: 62px;
+}
+
+#headSearch .close{
+    position:absolute;
+    left:-16px;
+    top:-1px;
+    width:14px;
+    height:14px;
+    /*text-align:center;*/
+    ling-height:14px;
+    font-size:14px;
+    border:1px solid #eee;
+    color:#ddd;
+    cursor:pointer;
+}
+
+#headSearch .search{
+    width:630px;
+    margin:0 auto;
+}
+
+#headSearch .searchTab{
+    height:22px;
+    padding-left: 7px;
+}
+#headSearch .searchTab li{
+    float:left;
+    width:36px;
+    line-height:22px;
+    margin-right:4px;
+    text-align: center;
+    /*background:pink;*/
+    color:#f40;
+    cursor: pointer;
+
+}
+#headSearch .searchTab li:hover{
+    background-color: #FFDEAD;
+
+}
+
+#headSearch .searchTab li.active{
+    color:#fff;
+    font-weight: bold;
+    /*颜色渐变-线性渐变  三类参数  ：方向,起始颜色，结束颜色*/
+    background-image:linear-gradient(to right,#ff9000,#ff5000);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffff9000',endColorstr='ffff5000',GradientType=1);
+    border-radius:6px 6px 0 0;
+}
+
+#searchContent{
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

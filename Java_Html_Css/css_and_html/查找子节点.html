@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查找子节点</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            var bt1Ele = document.getElementById("bt1");
+            bt1Ele.onclick=function(){
+                var cityEle = document.getElementById("city");
+                var lis = cityEle.childNodes;
+                alert(lis.length);
+            }
+
+            var bt2Ele = document.getElementById("bt2");
+            bt2Ele.onclick=function(){
+                var cityEle2 = document.getElementById("city2");
+                var li2s = cityEle2.parentNode;
+                alert(li2s.innerhtml);
+            }
+        }
+    </script>
+</head>
+<body>
+<table cellspacing="0" bgcolor="black" border="1">
+    <caption>城市</caption>
+    <tr bgcolor="white">
+        <td>
+            <ul id="city">
+                <li>北京</li>
+                <li>华盛顿</li>
+                <li>伦敦</li>
+            </ul>
+        </td>
+    </tr>
+    <tr bgcolor="white">
+        <td>
+            <ul id="city2">
+                <li>北京</li>
+                <li>华盛顿</li>
+                <li>伦敦</li>
+            </ul>
+        </td>
+    </tr>
+</table>
+<form action="">
+    <input type="button" id="bt1" value="查找#city父节点">
+    <input type="button" id="bt2" value="查找#city2子节点">
+</form>
+</body>
+</html>

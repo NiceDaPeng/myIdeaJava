@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+    <style type="text/css">
+        table{
+            border:1px solid orange;
+            border-collapse: collapse;
+            width:800px;
+            height:300px;
+            text-align:center;
+        }
+        td{
+            border:1px solid orange;
+        }
+        a{
+            text-decoration:none;
+            color:orange;
+        }
+    </style>
+    <script type="text/javascript" src="jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.open("post","showBooks",true);
+            xmlHttp.send();
+            xmlHttp.onreadystatechange = function () {
+                if (xmlHttp.readyState == 4 && xmlHttp.status == 2) {
+                  var responseText = xmlHttp.responseText;
+                    var jsonBook = JSON.parse(responseText);
+                    var bookList = jsonBook.bookList;
+                    for (var i = 0; i < bookList.length; i++) {
+                        var book = bookList[i];
+                        $("<tr><td>"+book.bid+"</td><td>"+book.bname+"</td><td>"+book.bprice+"</td></tr>")
+                    }
+                }
+            }
+        })
+    </script>
+</head>
+<body>
+
+    <table align="center">
+        <tr>
+            <th colspan="3">商品列表</th>
+        </tr>
+        <tr>
+          <td colspan="2">
+              商品信息
+          </td>
+          <td>
+            <a href="#">+购物车</a>
+          </td>
+        </tr>
+
+
+    </table>
+</body>
+</html>

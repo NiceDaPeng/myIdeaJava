@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="jquery/jquery-3.6.0.js">
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            $("#btnone").click(function () {
+                //设置所有checkbox的选中状态为true
+                $(":checkbox").prop("checked",true);
+
+            });
+
+            $("#btntwo").click(function () {
+                //设置所有box的选中状态为false
+                $(":checkbox").prop("checked",false);
+            });
+
+            $("#btnthree").click(function () {
+                //遍历每一个box，设置每一个box的选中状态为其反状态。
+                $(":checkbox[name='two']").each(function () {
+                    this.checked = !this.checked;
+                })
+
+                //获取所有box的长度
+                var allLength = $(":checkbox[name='two']").length;
+                //获取选中状态下的box的长度
+                var checkedLength=$(":checkbox[name='two']:checked").length;
+                //如果长度相等，则设置全选为选中状态。
+                if (allLength == checkedLength) {
+                    $(":checkbox[name='one']").prop("checked",true);
+                } else {
+                    $(":checkbox[name='one']").prop("checked",false);
+                }
+            });
+
+            //为所有的box绑定事件，如果都选中则全选box也会被选中，有一个没选中则全选box就不会选中
+            $(":checkbox[name='two']").click(function () {
+                var allLength = $(":checkbox[name='two']").length;
+                var checkedLength=$(":checkbox[name='two']:checked").length;
+                if (allLength == checkedLength) {
+                    $(":checkbox[name='one']").prop("checked",true);
+                } else {
+                    $(":checkbox[name='one']").prop("checked",false);
+                }
+            });
+
+            $("#btnfour").click(function () {
+                $(":checkbox[name='two']:checked").each(function () {
+                    alert(this.value);
+                })
+            });
+
+            $("#allBox").click(function () {
+                //在function中有一个this对象，表示的是当前正在响应事件的dom对象。
+                $(":checkbox[name='two']").prop("checked",this.checked);
+            });
+        });
+    </script>
+</head>
+<body>
+<input type="checkbox" name="one" id="allBox">全选/全不选 <br>
+<input type="checkbox" name="two" value="zuqiu">足球
+<input type="checkbox" name="two" value="lanqiu">篮球
+<input type="checkbox" name="two" value="piingpangqiu">乒乓球
+<input type="checkbox" name="two" value="yumao">羽毛球
+<br>
+<button id="btnone">全选</button>
+<button id="btntwo">全不选</button>
+<button id="btnthree">反选</button>
+<button id="btnfour">提交</button>
+</body>
+</html>

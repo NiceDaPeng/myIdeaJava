@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS中的数组</title>
+    <script>
+        var arr =[];
+
+        arr[0] = 10;
+        arr[1] = 20;
+        arr[10] = 30;
+        console.log(arr.length); //长度为11
+        console.log(arr[3]);  //值为undifined
+
+        for(i in arr){
+            console.log(arr[i]);
+        }
+
+        var array = new Array(10);  //创建长度为10的数组，里面如果没有赋值，那么默认为undifined。
+        console.log(array.length);
+        console.log(array[3]);
+
+        var array1 = new Array(1,2,3,4,5)//创建的时候就设置了数组中的数据。
+
+        var arr1 = [1,2,3,4,5];
+        console.log(arr1[7]);//值为undifined
+    </script>
+</head>
+<body>
+
+
+</body>
+</html>

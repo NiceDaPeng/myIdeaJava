@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+    表格分为：
+    表格的标题
+    表格的表头信息
+    表格的主体信息
+    表格的页尾信息
+
+    表格的完整结构；
+    <table>
+    <caption></caption>  指定表格的标题
+   <thread> 表格的表头信息
+       <tr>
+           <th></th>
+       </tr>
+   </thread>
+    <tbody>  表格的主体信息
+    <tr>
+        <td></td>
+    </tr>
+    </tbody>
+    <tfoot>  表格的页尾信息
+    <tr>
+        <td></td>
+    </tr>
+    </tfoot>
+</table>
+
+如果我们没有编写tbody 浏览器为我们添加
+如果指定了thead和tfoot，那么在修改整个表格的高度时，他们有默认的高度，不会随着表格的高度的变化而变化
+-->
+<table width="800px" border="1">
+    <caption>
+        <h1>学生信息</h1>
+    </caption>
+   <thread>
+       <tr>
+           <th>姓名</th>
+           <th>年龄</th>
+       </tr>
+   </thread>
+    <tbody>
+    <tr>
+        <td>张三</td>
+        <td>20</td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+        <td>里斯</td>
+        <td>21</td>
+    </tr>
+    </tfoot>
+</table>
+</body>
+</html>

@@ -1,0 +1,17 @@
+*{
+    margin:0;
+    padding:0;
+    float:none;
+}
+
+.fl{
+    float:left;
+}
+.fr{
+    float:right;
+}
+
+.bg{
+    background-color:#f40;
+}
+

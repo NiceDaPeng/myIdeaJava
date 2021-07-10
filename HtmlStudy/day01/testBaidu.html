@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>百度首页</title>
+  <base target="_blank" >
+</head>
+<body>
+<!--base标签就是专门用来统一指定所有的a标签需要如何跳转的
+  注意点：
+  base标签必须写在head开始标签和结束标签之间
+  如果我们设置了base标签以后，想要某个标签与base标签中设置的打开方式不同
+  那么此时可以单独设置a标签中的target 浏览器会按照a标签中指定的来执行
+
+  假连接：
+    点击之后不会跳转的连接，称之为假链接
+    存在的意义：在开发前期，其它的页面还没写出来，我们不知道跳转到什么地方，只能使用假链接来代替，
+    当项目后期，所有页面都有了，再将假链接替换为真链接
+  语法：
+    1，#:会跳转到一个没有东西的页面
+    2，javascript：没有任何反应。
+  -->
+<a href="#">假链接</a>
+<a href="javascript:">假链接</a>
+
+  <a href="http://news.baidu.com/" target="_self">新闻</a>
+  <a href="https://www.hao123.com/">hao123</a>
+  <a href="https://map.baidu.com/@13393990.44,3674896.25,12z">地图</a>
+  <a href="https://live.baidu.com/">直播</a>
+  <a href="http://tieba.baidu.com/f/user/passport?jumpUrl=http://tieba.baidu.com">贴吧</a>
+  <a href="https://xueshu.baidu.com/">学术</a>
+</body>
+</html>

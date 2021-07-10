@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全选全不选</title>
+  <script type="text/javascript">
+    window.onload=function(){
+      var bt1Ele = document.getElementById("bt1");
+      var bt2Ele = document.getElementById("bt2");
+      var bt3Ele = document.getElementById("bt3");
+      var aihaolist = document.getElementsByName("aihao");
+      bt1Ele.onclick=function () {
+        for (var i=0;i<aihaolist.length;i++){
+          aihaolist[i].checked=true;
+        }
+      }
+      bt2Ele.onclick=function () {
+        bt2Ele.onclick=function () {
+          for (var i=0;i<aihaolist.length;i++){
+            aihaolist[i].checked=!aihaolist[i].checked;
+          }
+        }
+      }
+      bt3.onclick=function () {
+        for (var i = 0; i < aihaolist.length; i++) {
+          aihaolist[i].checked=false;
+        }
+      }
+    }
+  </script>
+<body>
+<form action="">
+  爱好：
+  <input type="checkbox" name="aihao" value="java">java
+  <input type="checkbox" name="aihao" value="c">c
+  <input type="checkbox" name="aihao" value="js">javascript
+  <br>
+
+  <input type="button" id="bt1" value="全选">
+  <input type="button" id="bt2" value="反选">
+  <input type="button" id="bt3" value="全不选">
+</form>
+</body>
+</html>

@@ -1,0 +1,112 @@
+/*将一些没用的样式给去掉，因为有些标签的内容是有初始化样式的。*/
+body,p,h1,h2,h3,h4{
+    margin:0;
+}
+ul{
+    margin:0;
+    padding:0;
+    list-style:none;
+    /*假设一个标签上没有某些样式，就不要去设置了*/
+}
+img{
+    border:none;
+    vertical-align: middle;
+    /*垂直方向的对齐方式 img引入一张图，这张图底部是有一个缝隙的，通过这个就可以搞定了*/
+}
+
+a{
+    text-decoration:none;
+    /*a标签的下划线设置为none*/
+    color: #3c3c3c;
+    /*字体颜色初始化为#3c3c3c;*/
+}
+i{
+    font-style:normal;
+    /*不需要斜体 设置为normal*/
+}
+
+input,button{
+    margin:0;
+    padding:0;
+}
+
+button{
+    margin:0;
+    padding:0;
+    outline:none;
+    /*表单点击的时候会有一个蓝色的框，这是获取焦点的一个表现方式，设计师是不需要这个东西的。要设置为none*/
+}
+
+body{
+    font: 12px/1.5 tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;
+    color:#3c3c3c;
+    background-color:#f4f4f4;
+    /*font-family:'宋体';*/
+    /*font-famile:'\5b8b\4f53';*/
+    /*font-famile:SimSun;*/
+    /*代表的都是宋体，这个是宋体的英文单词；*/
+    /*很多网站会有这么一长串来设置字体，font是复合属性，可以将font-size ，font-famile，font-style放在一起*/
+    /*行高
+    行高可以给几种值？line-height：
+    line-height：normal；默认行高,两个因素决定其大小，字体和浏览器，字体不同行高是不一样的。微软雅黑行高大概为字体大小的1.32，宋体的行高大概为字体的1.41.
+                1.5；相对单位，浏览器的默认字体大小为16px，如果我们给个1.5，那么行高就是1.5*16px。
+                200%；相对单位，拿16px*200%。行高就是这个值。
+                50px;绝对单位拟，给多少，就是多少
+                5em;相对单位。一个em表示一个字体的大小，那么行高就是5*字体大小
+                这么多种取值，那平常到底选择哪一种呢？
+                12px/1.5: 一般body的行高都是设置为数字，而不是百分比和em或者是像素。如果我们使用数字作为值的话，那么子元素都会继承这个值。
+                比如我们设置了一个p标签的字体大小为32px，那么行高就默认是32*1.5.以为行高是继承了body的行高设置的。
+
+
+                设置了body的行高：line-height：1.5那么所有子元素的行高都是按照子元素的字体大小乘以body的行高
+
+                '\5b8b\4f53：Unicode编码  这个是代表的宋体。这是一个字符集，这个叫做万国码。每一种语言中的每一个字符，都设置了唯一的二进制编码，不会有重复的，
+                而且是跨平台跨语言的。前后端交互是不能出现中文的，如果出现中文那么有些浏览器是不能识别的，就会出现问题。设置了Unicode编码以后就不会出现问题。
+    */
+
+}
+/*预定义样式，使用的频率非常高*/
+.clearfix:after{
+    /*清除浮动 三件套*/
+    content: '';
+    display:block;
+    clear:both;
+}
+/*左浮动*/
+.fl{
+    float:left;
+}
+/*右浮动*/
+.fr{
+    float:right;
+}
+
+/*有些网页的内容部分不会铺满整个屏幕，其实有一个宽度，而且是居中的一个状态
+很多层都需要设置宽度，让其居中，那么我们可以先预定义一个class*/
+.layer{
+    width:1190px;
+    /*设置宽度*/
+    margin:0 auto;
+    /*让其居中*/
+}
+.c4{
+    color:#f40;
+}
+.c5{
+    color:#f50;
+}
+/*margin-top的值*/
+.mr5{
+    margin-right: 5px;
+}
+.mr7{
+    margin-right:7px;
+}
+.mt10{
+    margin-top:10px;
+}
+/*设置margin-right的值*/
+.mr10{
+    margin-right:10px;
+}
+

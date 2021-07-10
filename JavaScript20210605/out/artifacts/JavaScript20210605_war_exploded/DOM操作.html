@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM操作</title>
+    <style type="text/css">
+        div{
+            width:100px;
+            height:100px;
+        }
+        #d1{
+            background:red;
+        }
+        #d2{
+            background:blue;
+        }
+        #d3{
+            background:green;
+        }
+        #d4{
+            background:orange;
+        }
+    </style>
+    <script>
+        function f1(){
+           var divEle = document.getElementsByTagName("div");
+           document.body.insertBefore(divEle[divEle.length-1],divEle[0]);
+        }
+
+        function f2() {
+            //删除某个标签
+            var divEle = document.getElementsByTagName("div");
+            if (divEle.length > 0) {
+                document.body.removeChild(divEle[0]);
+            }
+        }
+    </script>
+</head>
+<body>
+
+<button onclick="f1()">改变顺序</button>
+
+<div id="d1"></div>
+<div id="d2"></div>
+<div id="d3"></div>
+<div id="d4">
+
+</div>
+</body>
+</html>

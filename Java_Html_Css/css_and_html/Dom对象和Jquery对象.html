@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dom对象和Jquery对象</title>
+  <script type="text/javascript" src="../libs/jquery-1.7.2.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      $("#dive").click(function(){
+        alert("这是Jquery对象的click方法");
+      });
+
+      var divE = document.getElementById("dive");
+      divE.onclick=function(){
+        alert("这是Dom对象的onclick方法");
+        var spanE = document.getElementsByTagName("span");
+        spanE.innerText="这是Dom对象的innerText属性";
+      }
+
+
+
+    });
+  </script>
+</head>
+<body>
+<div id="dive"> Java</div>
+<span id="spanid"></span>
+</body>
+</html>

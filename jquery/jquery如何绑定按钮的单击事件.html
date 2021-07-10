@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="jquery/jquery-3.6.0.js"></script>
+    <script>
+        // alert($); 测试jquery是否加载进来
+        $(function () {
+            //此方法相当于window.onload()=function(){}; 就是在页面加载完成之后运行代码
+            $("#btn1").click(function () {
+                alert("jquery的单击事件");
+            });
+        });
+    </script>
+</head>
+<body>
+<button id="btn1">哇哦</button>
+
+</body>
+</html>

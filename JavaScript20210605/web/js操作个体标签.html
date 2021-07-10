@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js操作个体标签</title>
+    <script>
+        //操作input标签的属性
+        function t1(){
+            //要想操作标签需要先找到它
+            var input = document.getElementById("inp1");
+            input.name = "name";
+            input.value = "dpj";
+            input.type = "text";
+            console.log(input.tagName);
+            input.readOnly=true;
+        }
+
+        function t2() {
+            var btn2Ele = document.getElementById("btn2");
+            btn2Ele.onclick = function () {
+                console.log("我是后加的事件");
+            }
+            btn2Ele.addEventListener('click',function () {
+                t3();
+            })
+
+            btn2Ele.addEventListener('click',function () {
+                t3();
+            })
+        }
+
+        function t3() {
+            console.log("我是t3函数")
+        }
+    </script>
+</head>
+<body>
+
+    <button id="bt1" onclick="t2()">操作属性</button>
+
+    <div>
+        <input type="text" id="inp1">
+    </div>
+
+    <button id="btn2">我是按钮2</button>
+</body>
+</html>

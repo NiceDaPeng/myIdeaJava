@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--datalist：
+  格式：
+  <datalist id="cars">
+  <option>奔驰</option>
+  <option>宝马</option>
+  <option>路虎</option>
+  <option>宾利</option>
+</datalist>
+如何给输入框绑定待选列表
+1，搞一个输入框
+2，搞一个datalist列表
+3，给datalist标签添加一个id
+4，给输入框添加list属性，将datalist的id对应的值赋值给输入框的list属性
+
+这种方式很多浏览器都不支持，所以用处不大
+    -->
+
+请输入你的车型：<input type="text" list="cars">
+<datalist id="cars">
+  <option>奔驰</option>
+  <option>宝马</option>
+  <option>路虎</option>
+  <option>宾利</option>
+</datalist>
+
+</body>
+</html>

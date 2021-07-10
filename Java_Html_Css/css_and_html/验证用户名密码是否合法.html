@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>验证用户名是否合法</title>
+  <script type="text/javascript">
+    window.onload=function(){
+      var submitBtnObj = document.getElementById("submitbtn");
+      submitBtnObj.onclick=function () {
+        var nameObj = document.getElementById("username");
+        var namevalue = nameObj.value;
+        var reg=/^\w{5,12}$/;
+        var namespanObj = document.getElementById("namespan");
+        if (reg.test(namevalue)){
+          namespanObj.innerHTML = "<img src=\"../images/right.jpg\" alt=\"验证中\" width=\"12px\">用户名可用";
+        } else {
+          namespanObj.innerHTML="<img src=\"../images/wrong.jpg\" alt=\"验证中\" width=\"12px\">用户名不可用";
+        }
+      }
+    };
+  </script>
+</head>
+<body>
+<form action="#">
+  <input type="text" id="username" value="input username">
+  <span id="namespan">
+  </span>
+  <input type="button" id="submitbtn" value="提交">
+</form>
+</body>
+</html>

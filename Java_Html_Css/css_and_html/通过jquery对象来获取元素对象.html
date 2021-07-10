@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link rel="stylesheet" href="../libs/colorscss.css">
+  <script type="text/javascript" src="../libs/jquery-1.7.2.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      // $("#btone").click(function () {
+      //   $("#one").css("background-color","green");
+      // });
+      $("#btone").click(function() {
+        var divone = document.getElementById("one");
+        // $("divone").css("background-color", "green");
+        var $one = $(divone);
+        $one.css("background-color","green");
+      });
+
+      // $("#btone").click(function(){
+      //   var spanE = document.getElementsByTagName("span");
+      //   spanE[0].innerText="hello javascript";
+      // });
+    })
+  </script>
+</head>
+<body>
+<div id="one">id为one的div
+  <div id="two">id为two的div</div>
+</div>
+<button id="btone">选择id为one的div设置北京颜色为green</button>
+<button id="bttwo">选择id为two的div设置北京颜色为green</button>
+<span></span>
+</body>
+</html>

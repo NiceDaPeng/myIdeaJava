@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--&lt;!&ndash;    创建日期转换器类的对象&ndash;&gt;-->
+<!--    <bean id="myDateConverter" class="com.dpj.converter.MyDateConverter">-->
+<!--        <property name="pattern" value="yyyy-MM-dd"/>-->
+<!--    </bean>-->
+
+<!--&lt;!&ndash;    将转换器注册到Spring中&ndash;&gt;-->
+<!--    <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">-->
+<!--        <property name="converters">-->
+<!--            <set>-->
+<!--                <ref bean="myDateConverter"/>-->
+<!--            </set>-->
+<!--        </property>-->
+<!--    </bean>-->
+
+    <bean id="student" class="com.dpj.converter.Student">
+        <property name="name" value="linghuchong"/>
+        <property name="birthday" value="2021/09/09">
+        </property>
+    </bean>
+
+</beans>

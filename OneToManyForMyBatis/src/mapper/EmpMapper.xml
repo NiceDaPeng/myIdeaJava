@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dao.EmpDao">
+    <!--自定义规则方式一-->
+    <!--<resultMap id="selectEmp" type="domain.Emp">-->
+        <!--<id property="empno" column="empno"></id>-->
+        <!--<result property="ename" column="ename"></result>-->
+        <!--<result property="sal" column="sal"></result>-->
+        <!--<association property="dept" javaType="domain.Dept" column="deptno" select="selectDept"></association>-->
+    <!--</resultMap>-->
+
+    <!--<select id="selectDept" resultType="domain.Dept">-->
+        <!--select deptno,dname,loc from dept where deptno = #{deptno}-->
+    <!--</select>-->
+
+
+    <!--自定义规则方式二 一条语句查询，联合-->
+    <resultMap id="selectEmp" type="domain.Emp">
+        <id property="empno" column="empno"></id>
+        <result property="ename" column="ename"></result>
+        <result property="sal" column="sal"></result>
+        <association property="dept" javaType="domain.Dept">
+            <id property="deptno" column="deptno"></id>
+            <result property="dname" column="dname"></result>
+            <result property="loc" column="loc"></result>
+        </association>
+    </resultMap>
+
+<!--==========================================================================================-->
+    <select id="selectOne" resultMap="selectEmp">
+        <!--方式一-->
+         <!--select empno,ename,sal,deptno from emp where empno = #{empno}-->
+        <!--方式二-->
+        select e.empno,e.ename,e.sal,d.deptno,d.dname,d.loc from emp e left outer join dept d on d.deptno = e.deptno where e.empno=#{empno}
+    </select>
+
+    <select id="selectAll" resultMap="selectEmp">
+        <!--方式一-->
+        <!--select empno,ename,sal,deptno from emp;-->
+        <!--方式二-->
+        select e.empno,e.ename,e.sal,d.deptno,d.dname,d.loc from emp e left outer join dept d on d.deptno = e.deptno
+    </select>
+</mapper>

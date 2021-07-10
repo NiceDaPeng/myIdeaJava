@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--    第一种方式：通过set方法DI-->
+<!--    <bean name="student" class="domain.Student">-->
+<!--        <property name="sid" value="19"></property>-->
+<!--        &lt;!&ndash;        DI：给属性赋值-->
+<!--          /**-->
+<!--         * 执行流程-->
+<!--         * 1，首先读取xml核心配置文件，的bean标签里的name属性找到student类-->
+<!--         * 2，找到类以后通过反射获取类的Class对象 Class clazz = Class.forName（）；-->
+<!--         * 3，然后创建类的对象Student student = （Student） clazz.newInstance（）；-->
+<!--         * 4，找寻clazz中的所有私有属性  clazz.getFields();-->
+<!--         * 5，获取属性的名字然后拼接上set，找到对应的set方法，然后调用执行。就赋上值了。-->
+<!--         */&ndash;&gt;-->
+<!--        <property name="sname" value="john"></property>-->
+<!--        <property name="sage">-->
+<!--            <value type="java.lang.Integer">20</value>-->
+<!--        </property>-->
+<!--        <property name="ssex">-->
+<!--            <value type="java.lang.String">男</value>-->
+<!--        </property>-->
+<!--    </bean>-->
+<!--第二种方式通过有参构造方法DI-->
+    <bean name="student" class="domain.Student" lazy-init="true">
+        <constructor-arg name="sid" value="1" type="java.lang.Integer"></constructor-arg>
+<!--        type属性可以写也可以不写，底层是通过属性的名字来找到对应的属性的类型的。
+            建议写上，这样就会根据type来确定属性的类型，性能也比较快-->
+<!--        <constructor-arg name="sname" value="&lt;dpj&gt;" type="java.lang.String"></constructor-arg>-->
+        <constructor-arg name="sname" >
+            <value><![CDATA[dpj~]]></value>
+        </constructor-arg>
+        <constructor-arg name="ssex" type="java.lang.String"><null></null></constructor-arg>
+        <constructor-arg name="sage" value="20" type="java.lang.Integer"></constructor-arg>
+    </bean>
+
+    <bean name="room" class="domain.Room">
+        <property name="name" value="一号机房"></property>
+        <property name="computer" >
+            <bean name="computer" class="domain.Computer">
+                <constructor-arg name="brand" value="联想" type="java.lang.String"></constructor-arg>
+                <constructor-arg name="price" value="5000" type="java.lang.Float"></constructor-arg>
+                <constructor-arg name="model" value="小新pro13" type="java.lang.String"></constructor-arg>
+            </bean>
+        </property>
+    </bean>
+
+</beans>

@@ -1,0 +1,4 @@
+com\dpj\domain\Books.class
+com\dpj\dao\BooksDAO.class
+com\dpj\mybatis\BooksDao.class
+com\dpj\mybatis\TestMain.class

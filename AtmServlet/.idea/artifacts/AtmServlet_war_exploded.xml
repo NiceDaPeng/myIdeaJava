@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="AtmServlet:war exploded">
+    <output-path>$PROJECT_DIR$/../../itheimasoftware/apache-tomcat-9.0.46-windows-x64/apache-tomcat-9.0.46/webapps/AtmForServlet</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="AtmServlet/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="AtmServlet" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jq样式处理</title>
+    <script type="text/javascript" src="jquery-3.6.0.js"></script>
+    <script>
+        $(function () {
+            $("#btn1").click(function () {
+                $('div').css('margin-top','10px');
+
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <button id="btn1">按钮1</button>
+    <div style="width:100px;height:100px;background:red"></div>
+
+    <div style="width:100px;height:100px;background:red"></div>
+    <div style="width:100px;height:100px;background:red"></div>
+    <div style="width:100px;height:100px;background:red"></div>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd"
+       default-lazy-init="true"
+       default-autowire="constructor"
+>
+
+
+<!--    <context:property-placeholder location="classpath:test.properties"></context:property-placeholder>-->
+<!--    <bean id="computer" class="domain.Computer">-->
+<!--        <property name="brand" value="${brand}"></property>-->
+<!--        <property name="model" value="${model}"></property>-->
+<!--        <property name="price" value="${price}"></property>-->
+<!--    </bean>-->
+<!--    <bean id="c1" class="domain.Computer"/>-->
+<!--    <bean id="base" abstract="true"/>-->
+
+<!--    <bean id="computer" class="domain.Computer">-->
+<!--        <property name="brand" value="#{'Lenovo'}"/>-->
+<!--        <property name="model" value="#{'8800'}"/>-->
+<!--        <property name="price" value="#{8800}"/>-->
+<!--    </bean>-->
+    <bean id="logo" class="domain.Logo" c:name="联想" c:color="yellow"/>
+    <bean id="computer" class="domain.Computer">
+        <property name="brand" value="#{logo.test()}"/>
+        <property name="model" value="#{'8800'}"/>
+        <property name="price" value="#{T(java.lang.Math).PI}"/>
+        <property name="logo" value="#{logo}"/>
+    </bean>
+</beans>
+
+

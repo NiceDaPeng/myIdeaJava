@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <style type="text/css">
+        div{
+            width:100px;
+            height:100px;
+            margin:10px;
+            border:1px solid red;
+        }
+    </style>
+    <script type="text/javascript" src="jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+        $(function () {
+
+        })
+        function t1() {
+            $("div:odd").css({background:'red'});
+            $('div:odd').first().css({background:'pink'});
+        }
+    </script>
+</head>
+<body>
+<button id="btn1" onclick="t1()">测试</button>
+<div>0</div>
+<div>1</div>
+<div>2</div>
+<div>3</div>
+<div>4</div>
+<div>5</div>
+</body>
+</html>

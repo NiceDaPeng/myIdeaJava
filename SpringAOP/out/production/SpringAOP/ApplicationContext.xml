@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd"
+       default-lazy-init="true"
+       default-autowire="constructor"
+>
+
+<!--    <bean id="controller" class="controller.TestController"/>-->
+<!--    <bean id="aspect1" class="aspect.Aspect1"/>-->
+<!--&lt;!&ndash;    给切面对象做一个说明 需要用到一个aop命名空间&ndash;&gt;-->
+<!--    <aop:config>-->
+<!--&lt;!&ndash;        说明这是一个切面对象 ref说明的是切面对象的id&ndash;&gt;-->
+<!--        <aop:aspect id="as1" ref="aspect1">-->
+<!--&lt;!&ndash;            帮我监听着目标对象的切点&ndash;&gt;-->
+<!--            <aop:pointcut id="c1" expression="execution(* controller.TestController.test())"/>-->
+<!--&lt;!&ndash;            为切点添加前置建议，method：前置建议的方法名字 pointcut-ref:引入切点&ndash;&gt;-->
+<!--            <aop:before method="before" pointcut-ref="c1"/>-->
+<!--&lt;!&ndash;            后置建议&ndash;&gt;-->
+<!--            <aop:after-returning method="after_returningMethod" pointcut-ref="c1"/>-->
+<!--            &lt;!&ndash;最终建议&ndash;&gt;-->
+<!--            <aop:after method="afterMethod" pointcut-ref="c1"/>-->
+<!--&lt;!&ndash;            异常的建议&ndash;&gt;-->
+<!--            <aop:after-throwing method="after_throwing" pointcut-ref="c1"/>-->
+<!--&lt;!&ndash;            环绕建议&ndash;&gt;-->
+<!--            <aop:around method="around" pointcut-ref="c1"/>-->
+<!--        </aop:aspect>-->
+<!--    </aop:config>-->
+    
+    <bean id="controller" class="controller.TestController"/>
+    <bean id="aspect1" class="aspect.Aspect1"/>
+    <bean id="aspect2" class="aspect.Aspect2"/>
+    <aop:config>
+        <aop:pointcut id="cut1" expression="execution(* controller.TestController.test())"/>
+        <aop:aspect id="as2" ref="aspect2">
+            <aop:around method="around" pointcut-ref="cut1"/>
+            <aop:before method="before" pointcut-ref="cut1"/>
+            <aop:after-returning method="after_returningMethod" pointcut-ref="cut1"/>
+        </aop:aspect>
+        <aop:aspect id="as1" ref="aspect1">
+            <aop:around method="around" pointcut-ref="cut1"/>
+            <aop:before method="before" pointcut-ref="cut1"/>
+            <aop:after-returning method="after_returningMethod" pointcut-ref="cut1"/>
+        </aop:aspect>
+    </aop:config>
+</beans>
+
+

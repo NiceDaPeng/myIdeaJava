@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片跟随</title>
+    <style type="text/css">
+        #two{
+            position:absolute;
+            display: none;
+        }
+    </style>
+    <script type="text/javascript" src="jquery/jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#one").bind("mouseover mouseout mousemove",function (event) {
+                if (event.type == "mouseover") {
+                    $("#two").show();
+                } else if (event.type == "mouseout") {
+                    $("#two").hide();
+                } else if (event.type == "mousemove") {
+                    $("#two").offset({
+                        top: event.pageX + 10,
+                        left:event.pageY +10
+                    })
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+
+
+    <img id="one" src="img/light1.jpg" alt="light1">
+
+
+<div id="two"><img  src="img/lunbotu2.jpg" alt="lunbotu"></div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+  1，宽度和高度  默认是根据内容来缩放的
+    可以给table和td标签使用
+      1，表格高度和宽度默认是按照内容的尺寸来调整的
+      2，也可以通过给table标签设置属性的方式，手动指定表格的高度和宽度
+      3，如果给td标签设置了width和height，会修改当前单元格的高度和宽度，不会影响整个表格的宽度和高度
+  2，水平对齐和垂直对其
+    水平对齐可以给tr标签 table标签 td标签使用
+    align： center  left  right
+    给table标签设置了align属性 表示整个表格所处的位置
+    给tr标签设置了align属性，控制一行中的所有单元格内容的水平方向的对齐方式
+    给td标签设置了align属性，可以控制当前单元格内容在水平方向的对齐方式
+    如果td中设置了align属性，tr中也设置了align属性，那么单元格的内容会按照td设置的来对齐。
+
+    垂直方向 只有tr和td可以使用
+      valign：top center bottom
+      给tr标签设置valign属性可以控制当前行中所有单元格中的内容在垂直方向的对齐方式
+      给td标签设置了valign属性可以控制当前单元格中的内容的垂直对齐方式
+      如果设置了tr和td那么会按照td设置的来对齐
+  3，外边距和内边距属性
+    只能给table标签使用
+    cellspacing：设置外边距     cellpadding:设置内边距
+    外边距就是单元格和单元格之间的距离，我们称之为外边距
+    默认情况下单元格和单元格的间距是2个像素
+    内边距：单元格的边框和文字之间的间隙 默认值是1
+
+   注意：
+    以上讲解的内容仅仅作为了解，在企业开发中所有控制样式的都是通过css来完成的。
+-->
+<table border="1" align="center" cellspacing="0" cellpadding="20">
+  <tr>
+    <td>1.1</td>
+    <td>1.2</td>
+  </tr>
+  <tr valign="">
+    <td>2.1</td>
+    <td>2.2</td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--    需要配置一个请求和真实资源的关系Controller-bean-->
+<!--    将Controller这个类的对象交给Spring容器来管理-->
+    <bean id="testController" class="controller.TestController"/>
+<!--配置请求和类对象之间的映射关系  通过请求找到它-->
+<!--    DispatcherServlet类有一个自己的小弟，负责处理映射关系叫做SimpleUrlHandlerMapping-->
+    <bean id="simpleUrlHandlerMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings" >
+            <props>
+<!--                真实的请求和类对应的关系-->
+                <prop key="TestController.do">testController</prop>
+            </props>
+        </property>
+    </bean>
+
+</beans>

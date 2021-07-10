@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="dom4j-1.6.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/book/web/WEB-INF/lib/dom4j-1.6.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/book/web/WEB-INF/lib/druid-1.1.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/book/web/WEB-INF/lib/hamcrest-core-1.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/book/web/WEB-INF/lib/junit-4.13.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/book/web/WEB-INF/lib/mysql-connector-java-5.0.8-bin.jar!/" />
+      <root url="jar://$PROJECT_DIR$/book/web/WEB-INF/lib/commons-dbutils-1.6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

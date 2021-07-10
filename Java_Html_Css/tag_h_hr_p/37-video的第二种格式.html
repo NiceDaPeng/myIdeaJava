@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+source可以有多个
+<source src="video01.wepm" type="">
+  <source src="video01.wepm" type="">
+  由于视频数据非常重要，所以五大浏览器厂商都不愿意支持别人的视频格式，所以导致了没有一个视频格式时所有浏览器都支持的
+  w3c为了解决这个问题，推出了第二种video格式。主要为了解决浏览器的适配问题
+  video标签的第二种格式存在的意义，就是为了解决浏览器的适配问题。我们可以把视频的三种格式通过source标签指定给video标签
+  那么以后浏览器播放视频时，就会从这三种选择一种自己支持的格式来播放
+  注意点：当前通过video的第二种格式，虽然能够指定所有浏览器都支持的视频格式，但是显然所有的浏览器都通过video播放视频还有
+  一个前提条件，就是浏览器必须支持html5标签的，所以为了让过去的浏览器也能通过video标签来播放我们的视频
+  那么以后可以通过js框架叫做html5media来实现。
+-->
+<video controls="controls" poster="../images/java.jpg" muted="muted">
+  <source src="../images/video01.wepm" type="video/webm">
+  <source src="../images/video01.mp4" type="video/mp4">
+  <source src="../images/video01.ogg" type="video/ogg">
+</video>
+</body>
+</html>

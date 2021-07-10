@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>操作标签样式</title>
+    <script>
+        function f1(){
+            var divEle = document.getElementById("d1");
+            var style = divEle.style;
+            style.width="100px";
+            style.height="100px";
+            style.border = "3px solid red";
+            style.borderRadius="50px";
+            style.background="#f40";
+            console.log(style.getComputedStyle(divEle));
+        }
+    </script>
+</head>
+<body>
+    <button onclick="f1()">操作样式</button>
+    <div id="d1"></div>
+</body>
+</html>

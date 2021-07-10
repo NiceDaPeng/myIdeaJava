@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>confirm</title>
+    <script>
+        function f(event) {
+            var boolean  = confirm("确认取消吗？");
+
+        }
+        function f1(event) {
+            // window.open("http://www.baidu.com");
+            window.open("http://www.baidu.com","_blank","width=500,height=500,top=100");
+        }
+        function f2(event) {
+            window.setTimeout(function (event) {
+                console.log("延迟执行，只执行一次");
+            },1000)
+        }
+
+        var timer;
+        function f3(event) {
+            timer = window.setInterval(function (event) {
+                //获得div对象
+                var divEle = document.getElementById("d1");
+                //获得div的style对象
+                var style = getComputedStyle(divEle);
+                //获得style对象的属性marginLeft；
+                var left = style.marginLeft;
+                var top = style.marginTop;
+                //通过parseInt（）方法取出marginLeft前面的数字
+                left = parseInt(left);
+                top = parseInt(top);
+                //将数字每次触发函数都+10个像素
+                left += 10;
+                top += 10;
+                //设置只能通过行内样式来设置，所以需要获取行内样式对象
+                style =divEle.style;
+                //将行内样式对象的属性值修改；
+                style.marginLeft = left+"px";
+                style.marginTop = top+"px";
+            },20)
+        }
+        function f4(event) {
+            window.clearInterval(timer); //停止定时器；
+        }
+    </script>
+</head>
+<body>
+
+<button id="btn1" onclick="f()">测试confirm</button>
+<button id="btn2" onclick="f1()">测试window.open</button>
+<button id="btn3" onclick="f2()">测试延迟</button>
+<button id="btn4" onclick="f3()">测试定时</button>
+<button id="btn5" onclick="f4()">停止定时</button>
+<div id="d1" style="width:100px;height:100px;background:red;margin-left:0px;margin-top:0px"></div>
+</body>
+</html>

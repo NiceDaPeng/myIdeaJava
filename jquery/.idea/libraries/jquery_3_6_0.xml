@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="jquery-3.6.0" type="kotlin.js">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/jquery/jquery-3.6.0.js" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

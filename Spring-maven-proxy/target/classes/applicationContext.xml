@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+<!--    <context:property-placeholder location="classpath:db.properties"/>-->
+<!--    <bean id="staticFactory" class="com.dpj.staticFacotryBean.StaticFactoryBean">-->
+<!--        <property name="url" value="${jdbc.url}"/>-->
+<!--        <property name="driverClassName" value="${jdbc.drvierClassName}"/>-->
+<!--        <property name="user" value="${jdbc.user}"/>-->
+<!--        <property name="password" value="${jdbc.password}"/>-->
+<!--    </bean>-->
+<!--    <bean id="test" class="com.dpj.staticFacotryBean.TestStaticFactoryBean" factory-method="getConn"/>-->
+
+<!--    创建实现类的对象-->
+    <bean id="userService" class="com.dpj.dynamic.UserServiceImpl"/>
+<!--    创建动态代理对象-->
+<!--    <bean id="serviceDynamic" class="com.dpj.dynamic.Before"/>-->
+<!--    <bean id="serviceDynamic" class="com.dpj.dynamic.Before1"/>-->
+    <bean id="arround" class="com.dpj.dynamic.Arround"/>
+<!--    定义切入点-->
+    <aop:config>
+        <aop:pointcut id="allMethod" expression="execution(* login(..))"/>
+        <aop:advisor advice-ref="arround" pointcut-ref="allMethod"/>
+    </aop:config>
+
+    <bean id="orderService" class="com.dpj.dynamic.OrderServiceImpl"/>
+
+    <bean id="beanPostProcessor" class="com.dpj.beanPostProcessor.MyBeanPostProcessor"/>
+    <bean id="stu" class="com.dpj.beanPostProcessor.Student"/>
+
+
+</beans>

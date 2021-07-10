@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script type="text/javascript">
+    function fun(){
+      alert("表单提交了--失败了")
+      return false;
+    }
+
+   window.onload=function(){
+        var form1 = document.getElementById("form1");
+        form1.onsubmit=function(){
+            alert("发现不合法 return false!");
+            return true;
+        }
+   }
+  </script>
+</head>
+<body>
+<form action="http://www.baidu.com" id="form1" onsubmit="return false">
+  <input type="submit">
+</form>
+</body>
+</html>

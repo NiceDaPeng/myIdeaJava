@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dao.PersonDao">
+    <resultMap id="selectPerson" type="domain.Person">
+        <id property="pid" column="pid"></id>
+        <result property="pname" column="pname"></result>
+        <association property="idCard" javaType="domain.IDCard" column="cardid" select="selectIDCard" ></association>
+    </resultMap>
+    <select id="selectIDCard" resultType="domain.IDCard">
+        select * from idcard where cardid = #{cardid}
+    </select>
+
+    <select id="selectOne" resultMap="selectPerson" >
+        select * from person where pid = #{pid}
+    </select>
+</mapper>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>权重问题</title>
+
+    <style>
+        p{
+            color:red;
+        }
+        p{
+            color:blue;
+            font-size:30px;
+        }
+        /*//权重是相加的。*/
+        c1{
+            background:gray !important;
+            /*权重更高。*/
+        }
+
+        #d1{
+            background:red;
+        }
+    </style>
+</head>
+<body>
+
+    <p class="c1" id="d1">星期一</p>
+    <a href="#" class="c1"></a>
+    <p>星期二</p>
+    <p>星期三</p>
+    <p>星期四</p>
+</body>
+</html>

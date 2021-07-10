@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<school id="huangpujunxiao" name="黄埔军校" loc="广州">
+
+    <class id="one" name="Java1期" loc="黄埔区">
+        <teacher id="t1" name="周恩来" age="23">
+            <sex>男</sex>
+        </teacher>
+        <student id="s1" name="陈赓" age="19">
+            <sex>女</sex>
+        </student>
+        <student id="s2" name="叶挺" age="18">
+            <sex>女</sex>
+        </student>
+        <student id="s3" name="贺龙" age="20">
+            <sex>男</sex>
+        </student>
+    </class>
+
+    <class id="two" name="Java2期" loc="越秀区">
+        <teacher id="t2" name="陈独秀" age="23">
+            <sex>女</sex>
+        </teacher>
+        <student id="s4" name="李云龙" age="19">
+            <sex>男</sex>
+        </student>
+        <student id="s5" name="任弼时" age="18">
+            <sex>女</sex>
+        </student>
+        <student id="s6" name="陈延年" age="20">
+            <sex>男</sex>
+        </student>
+    </class>
+
+</school>

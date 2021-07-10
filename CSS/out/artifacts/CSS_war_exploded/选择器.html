@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择器</title>
+    <style type="text/css" rel="stylesheet">
+
+        a{
+            color:red;
+            font-size:20px;
+        }
+        p{
+            color:blue;
+        }
+        .c1{
+            color:orange;
+
+        }
+        #c2{
+            color:olivedrab;
+        }
+
+        .c2{
+            font-family:楷体;
+        }
+        #c3{
+            color:green;
+        }
+        input[name=sex]{
+            /*
+            找到了有name属性且值为sex的input标签
+             */
+
+            color:red;
+        }
+
+        p a{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+
+<a href="" class="c1 c2">一月</a>
+<a href="">二月</a>
+
+<p class="c1 c2">星期一</p>
+<p id="c2">星期二</p>
+<p>星期三</p>
+
+<ul>
+    <li id="c3">a</li>
+    <li>c</li>
+</ul>
+
+<input type="text" name="uname" value="" readonly="readonly">
+
+<p>
+    <a href="">点我呀one</a>
+</p>
+    <a href="">点我呀two</a>
+<li>
+    <a href="">点我呀three</a>
+</li>
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    <bean id="person" class="com.dpj.domain.Person"/>-->
+<!--    <bean id="person1" class="com.dpj.domain.Person"/>-->
+<!--    <bean class="com.dpj.domain.Person"/>-->
+
+    <bean id="person" class="com.dpj.domain.Person" p:pname="dpj" p:ppassword="nice">
+<!--        <property name="ppassword" value="good">-->
+<!--&lt;!&ndash;            <value>good</value>&ndash;&gt;-->
+<!--        </property>-->
+<!--        <property name="pname">-->
+<!--            <value>nice</value>-->
+<!--        </property>-->
+        <property name="emails">
+            <list>
+                <value>dpj@qq.com</value>
+                <value>qll@qq.com</value>
+                <value>lhc@qq.com</value>
+            </list>
+        </property>
+        <property name="tels">
+            <set>
+                <value>11111</value>
+                <value>2222</value>
+                <value>3333</value>
+            </set>
+        </property>
+
+        <property name="strs">
+            <list>
+                <value>aaaa</value>
+<!--                <value>bbbb</value>-->
+<!--                <value>cccc</value>-->
+<!--                <ref bean=""/>-->
+<!--                <list></list>-->
+            </list>
+        </property>
+
+        <property name="keyValues">
+            <map>
+                <entry>
+                    <key><value>name</value></key>
+                    <value>linghuchong</value>
+                </entry>
+                <entry>
+                    <key><value>password</value></key>
+                    <value>123</value>
+                </entry>
+            </map>
+        </property>
+
+        <property name="properties">
+            <props>
+                <prop key="key1">value1</prop>
+                <prop key="key2">value2</prop>
+            </props>
+        </property>
+
+    </bean>
+
+    <bean id="daoimpl" class="com.dpj.dao.impl.PersonDaoImpl"></bean>
+
+<!--    <bean id="personService" class="com.dpj.service.impl.PersonServiceImpl">-->
+<!--        <property name="dao">-->
+<!--&lt;!&ndash;            <ref bean="daoimpl"/>&ndash;&gt;-->
+<!--            <bean class="com.dpj.dao.impl.PersonDaoImpl"/>-->
+<!--        </property>-->
+<!--    </bean>-->
+
+    <bean id="personService" class="com.dpj.service.impl.PersonServiceImpl" p:dao-ref="daoimpl">
+<!--        <property name="dao" ref="daoimpl"/>-->
+    </bean>
+
+<!--    ================================================================-->
+    <bean id="customer" class="com.dpj.constructor.Customer">
+        <constructor-arg>
+            <value>linghuchong</value>
+        </constructor-arg>
+        <constructor-arg>
+            <value>102</value>
+        </constructor-arg>
+    </bean>
+
+<!--    <bean id="conn" class="com.dpj.factoryBean.ConnectionFactoryBean">-->
+<!--        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>-->
+<!--        <property name="url" value="jdbc:mysql://localhost:3306/testmybatis?useSSL=false"/>-->
+<!--        <property name="username" value="root"/>-->
+<!--        <property name="password" value="admin"/>-->
+<!--    </bean>-->
+<!--    <bean id="connFactory" class="com.dpj.factoryBean.ConnectionFactory">-->
+<!--        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>-->
+<!--        <property name="url" value="jdbc:mysql://localhost:3306/testmybatis?useSSL=false"/>-->
+<!--        <property name="username" value="root"/>-->
+<!--        <property name="password" value="admin"/>-->
+<!--    </bean>-->
+<!--    <bean id="conn" factory-bean="connFactory" factory-method="getConnection"/>-->
+
+<!--    <bean id="account" class="com.dpj.scope.Account" scope="singleton"/>-->
+    <bean id="account" class="com.dpj.scope.Account" scope="prototype"/>
+
+    <bean id="product" class="com.dpj.product.Product" init-method="init" destroy-method="myDestory"/>
+
+<!--    <context:property-placeholder location="classpath:/db.properties"/>-->
+<!--    <bean id="conn" class="com.dpj.factoryBean.ConnectionFactoryBean">-->
+<!--        <property name="url" value="${}"/>-->
+<!--        <property name="driverClassName" value="${}"/>-->
+<!--        <property name="username" value="${}"/>-->
+<!--        <property name="password" value="${}"/>-->
+<!--    </bean>-->
+</beans>

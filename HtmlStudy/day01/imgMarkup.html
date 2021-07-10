@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>img</title>
+</head>
+<body>
+<!--    这张图片设置了width和height，title，alt属性的值<br>-->
+<!--    <img src="../images/java.jpg" width="200px" height="300px" title="这是一个自拍照" alt="图片加载失败"><br><br>-->
+<!--    这张图片设置了width和height属性<br>-->
+<!--    <img src="../images/java.jpg" width="300" height="400"><br>-->
+<!--    这张图片设置了width属性<br>-->
+<!--    <img src="../images/java.jpg" width="100"><br>-->
+<!--
+    src:source的简写，资源路径
+        圖片的路徑问题：
+            1，当图片和当前项目同级，则直接写：src=”图片名称‘
+            2，当图片所在的文件夹和当前项目的在同一级，则src=“目录名称/图片名称”
+            3，当图片所在的文件夹在当前项目的上一级文件夹中则src=../目录名称/图片名称
+                先找到当前项目的上一级文件夹，然后再去找指定目录下的图片。
+    width：图片的宽度
+    height：图片的高度
+    如果两个同时设置，那么这个图片又可能会变相
+    又想指定宽度，又不想图片变形，可以只指定宽度和高度中的一个。
+    指定了宽度，浏览器会等比计算出高度，指定了高度，浏览器会等比计算宽度。
+    title：当鼠标在图片上悬停的时候，需要显示的内容
+    alt:用于告诉浏览器，当需要显示的图片找不到时，显示什么内容
+    br标签的注意点：
+        1，br标签可以连续使用，使用了几个br标签就换几行
+        <img src="../images/java.jpg" width="200px" height="300px" title="这是一个自拍照" alt="图片加载失败"><br><br>
+        2，由于html的作用就是给文本添加语义，而br标签的语义时不另起一个段落换行，在企业开发中，需要换行一般都需要起一个段落，、
+           在企业开发中很少使用br标签
+-->
+    <p>这张图片设置了width和height，title，alt属性的值</p>
+    <p><img src="../images/java.jpg" width="512" height="512" title="这是一个自拍照" alt="图片加载失败"></p>
+    <p>这张图片设置了width和height属性</p>
+    <p><img src="../images/java.jpg" width="512" height="512"></p>
+    <p>这张图片设置了width属性</p>
+    <p><img src="../images/java.jpg" width="512"></p>
+</body>
+</html>

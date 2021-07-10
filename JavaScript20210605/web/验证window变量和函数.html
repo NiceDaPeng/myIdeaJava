@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>验证window变量和函数</title>
+
+    <script>
+        function f() {
+            console.log(window.f1);
+        }
+
+        function f1() {
+            console.log(window.f);
+        }
+    </script>
+</head>
+<body>
+<button onclick="f()">测试window的变量和函数</button>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.TeacherDao">
+    <resultMap id="selectTeacher" type="domain.Teacher">
+        <id property="tid" column="tid"></id>
+        <result property="tname" column="tname"></result>
+        <result property="tsex" column="tsex"></result>
+        <result property="tage" column="tage"></result>
+        <collection property="studentList" javaType="list" ofType="domain.Student" column="">
+
+        </collection>
+    </resultMap>
+    <select id="selectOne" resultMap="selectTeacher">
+      select * from teacher where tid=#{tid}
+    </select>
+</mapper>

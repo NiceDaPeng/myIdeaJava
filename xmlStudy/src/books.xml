@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--<?xml version="1.0" encoding="utf-8" ?> xml文件的声明
+    version xml的版本
+    encoding  xml的编码
+-->
+<books>
+    <book sn="SN12221121">
+        <name>时间简史</name>
+        <author>霍金</author>
+        <price>90</price>
+    </book>
+
+    <book sn="SN12221122">
+        <name>Java虚拟机</name>
+        <author>刁湃锦</author>
+        <price>90</price>
+    </book>
+
+    <!--<book sn="SN12221123" name="厉害了我的国" author="刁湃锦" price="199"></book>-->
+</books>

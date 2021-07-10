@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script type="text/javascript" src="../../libs/jquery-1.7.2.js"></script>
+  <style type="text/css">
+    #one{
+      width: 100px;
+      height: 50px;
+      left: 300px;
+      top:300px;
+    }
+  </style>
+  <script type="text/javascript">
+  $(function(){
+    $("#one").bind("mouseover mouseout mousemove",function (event) {
+      if (event.type=="mouseout"){
+        $("#two").hide();
+      } else if (event.type == "mouseover"){
+        $("#two").show();
+      } else if (event.type=="mousemove"){
+        console.log(event);
+        $("#two").offset({
+          top:event.pageX +10,
+          left:event.pageY+10
+        })
+      }
+    })
+  })
+  </script>
+</head>
+<body>
+
+  <img src="../../images/tomact.jpg" alt="loading" id="one">
+
+<div>
+  <img src="../../images/tomact.jpg" alt="loading" id="two" style="display: none">
+</div>
+</body>
+</html>

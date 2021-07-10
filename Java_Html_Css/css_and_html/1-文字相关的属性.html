@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style type="text/css">
+    a{
+      text-decoration: none;
+    }
+    table{
+      border:1px red solid;
+    }
+    ul{
+      list-style: none;
+    }
+  </style>
+    <script type="text/javascript">
+        function fun1(){
+            return 10;
+        }
+        function f() {
+            return 20;
+        }
+       alert(fun1()+f()) ;
+
+        var sum=function (a,b) {
+            alert(a+b);
+        }
+        sum(1,2);
+
+        var mod=function () {
+            return 20;
+        }
+        alert(mod())
+    </script>
+</head>
+<body>
+<!--
+规定文字样式的属性：
+font-style: 文字样式
+  取值：italic 倾斜的，normal 正常的
+
+规定文字粗细的属性
+font-weight: bold;
+一种是单词一种是数字，数字的取值范围是100-900
+bolder：比加粗还要粗
+lighter：细线，默认值
+数组取值在100-900之间的整百数字。100就是细线 数字用的比较少，单词会多一点
+
+规定文字大小的属性
+font-size: 30px;px就是piexl的缩写
+取值单位是像素
+注意点：通过font-size设置字体大小一定要带单位 也就是一定要写px
+
+规定文字字体的属性
+默认都是宋体的
+font-family: "宋体"; 如果取值是中文的要使用双引号或单引号引起来。
+设置的字体必须是用户电脑上安装的字体
+
+字体不存在又不想用默认的怎么办？
+如果设置的字体不存在系统会默认的使用宋体来显示
+
+如果我们设置的字体不存在，又不想用默认的字体怎么办？
+font-famile属性是可以设置备选方案的
+font-family: "aaaa","微软雅黑";  前面找不到找后面的
+
+如果想给中文和英文分别单独设置字体，怎么办？
+英文的字体一定要写在前面，备选字体设置为中文字体
+但凡是中文字体，里面都包含了英文
+但凡是英文字体，里面都包含了中文
+中文字体可以处理英文，英文字体不能处理中文
+font-family: Arial,"微软雅黑";
+-->
+
+<p>abc我是段落</p>
+<div>1</div>
+<a href="http://www.baidu.com">百度</a>
+<ul>
+  <li>1</li>
+  <li>2</li>
+</ul>
+<table>
+  <tr>
+    <td>1.1</td>
+    <td>1.2</td>
+  </tr>
+</table>
+</body>
+</html>

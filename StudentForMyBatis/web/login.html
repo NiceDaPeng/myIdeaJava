@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录窗口</title>
+    <script type="text/javascript" src="jquery-3.6.0.js">
+    </script>
+    <style type="text/css">
+        #t1{
+            width:800px;
+            height:300px;
+            text-align:center;
+            border:1px solid orange;
+            border-collapse: collapse;
+        }
+        td{
+            border:1px solid orange;
+        }
+
+        #messSpan{
+            color:darkgray;
+            font-size:12px;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function () {
+            $("#submit").click(function () {
+                var saccount = $("#username").val();
+                var spassword = $("#password").val();
+                var xmlHttp = new XMLHttpRequest();
+                xmlHttp.open("post","login?saccount="+saccount+"&spassword="+spassword);
+                xmlHttp.send();
+                xmlHttp.onreadystatechange = function(){
+                    if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+                        $("#messSpan").innerHTML="";
+                        var text = xmlHttp.responseText;
+                        if (text == "登录成功") {
+                            window.location.href="welcome.html?saccount="+saccount;
+                        }else {
+                            $("#messSpan").html(text);
+                        }
+                    }
+                }
+
+                // confirm(saccount);
+                // confirm(spassword)
+               // window.location.href="welcome.html";
+            });
+        })
+    </script>
+</head>
+<body>
+
+<table id="t1" align="center">
+    <tr>
+        <td colspan="2">请登录</td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <span id="messSpan">请输入账号和密码</span>
+        </td>
+
+    </tr>
+    <tr>
+        <td colspan="2">账户：<input id="username" type="text" name="saccount"></td>
+    </tr>
+    <tr>
+        <td colspan="2">密码：<input id="password" type="password" name="password"></td>
+    </tr>
+    <tr>
+        <td>
+            <input id="submit" type="button" value="登录">
+        </td>
+        <td>
+            <input id="regist" type="button" value="注册">
+        </td>
+    </tr>
+</table>
+</body>
+</html>

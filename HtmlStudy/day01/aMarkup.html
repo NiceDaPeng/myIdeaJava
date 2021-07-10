@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>a</title>
+</head>
+<body>
+<!--a标签就是控制页面与页面之间跳转的
+   可以让文字点击，也可以让图片点击
+  href：需要跳转的页面地址
+  target：作用就是专门控制页面如何跳转
+  有两个取值
+    _self:在当前选项卡跳转，也就是在当前页面打开 默认值就是这个
+    _blank:在新的选项卡跳转，也就是在新的页面打开
+  title：和img中的title一样，都是用来控制鼠标悬停时提示的文本
+  注意点：
+    a标签不仅可以让文字可以点击，也可以让图片可以点击
+    一个a标签必须又一个href属性，否则a标签不知道要跳转到什么地方。
+    如果通过a标签的href属性指定了一个url地址，那么必须再前面加上http：//或者时https://
+    a标签的href属性可以指定url路劲以外，还可以指定本地的网页。
+-->
+<a href="http://news.baidu.com/" target="_self" title="会跳转到百度新闻页面">新闻</a>
+<a href="https://auto.sina.com.cn/shanghaichezhan/?c=spr_auto_trackid_9ec94d01d72a82e8" target="_blank" title="参加车展">
+  <img src="../images/java.jpg" alt="图片加载失败" title="车展" width="100">
+</a>
+</body>
+</html>

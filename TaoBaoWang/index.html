@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>淘宝网 - 淘！我喜欢</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="icon" href="favicon2.ico">
+    <base target="_blank">
+    <!--base定义文档中包含所有url相对的根目录，就是url中所有的地址都是相对于base的 设置一个基础的url
+    如果我们设置了base的target那么所有的url都会按照base中的打开方式打开新页面。base一个页面只能出现一个-->
+</head>
+<body>
+<!--target属性为_blank表示在新页面打开-->
+<!--头部信息-->
+<!--title中的小图标其实是通过图片来做的事一种特殊的格式.ico格式的
+如何显示ico图标呢？1，放在根目录中 2,通过link标签 设置rel属性为icon href引入图片-->
+<div id="headMessage" class="layer">
+    <ul class="fl">
+        <!--左边标签-->
+        <li>
+            <span>中国大陆</span><span class="iconfont arrow">&#xe60b;</span>
+        </li>
+        <li class="mr7">
+            <a href="#" class="login mr7">亲，请登录</a>
+            <a href="#">免费注册</a>
+        </li>
+        <li>
+            <a href="#">手机逛淘宝</a>
+        </li>
+    </ul>
+    <!--右标签-->
+    <ul class="fr">
+        <li>
+            <a href="#">我的淘宝</a>
+            <span class="iconfont arrow">&#xe60b;</span>
+        </li>
+        <li>
+            <span class="iconfont mr5 c4">&#xe613;</span>
+            <a href="#">购物车</a>
+            <strong class="mr5">0</strong>
+            <span class="iconfont ">&#xe60b;</span>
+        </li>
+        <li>
+            <a href="#"><span class="iconfont arrow mr5 store">&#xe6b9;</span>收藏夹</a>
+            <span class="iconfont arrow">&#xe60b;</span>
+        </li>
+        <li>
+            <a href="#">商品分类</a>
+
+        </li>
+
+        <li class="line">|</li>
+
+        <li>
+            <a href="#">千牛卖家中心</a>
+            <span class="iconfont arrow ">&#xe60b;</span>
+        </li>
+
+        <li>
+            <a href="#">联系客服</a>
+            <span class="iconfont arrow">&#xe60b;</span>
+        </li>
+
+        <li>
+            <span class="iconfont arrow c4 mr5">&#xe621;</span>
+            <a href="#">网站导航</a>
+            <span class="iconfont arrow">&#xe60b;</span>
+        </li>
+
+    </ul>
+</div>
+<!--头部广告-->
+<div id="headAd">
+    <div class="layer clearfix">
+        <a href="#"><img src="" alt=""></a>
+    </div>
+</div>
+
+<!--头部搜索-->
+<div id="headSearch">
+    <div class="clearfix layer">
+        <!--<h1><a href="#"><img src="img/taobaologo.png" alt="淘宝网"></a></h1>-->
+        <h1 class="fl"><a href="#">淘宝网</a></h1>
+        <div class="code fr">
+            <span class="iconfont close">&#xe608;</span>
+            <span class="c5 ">手机淘宝</span>
+            <img src="img/code.png" alt="">
+        </div>
+
+        <div class="search">
+            <ul class="searchTab clearfix">
+                <li class="active">宝贝</li>
+                <li>天猫</li>
+                <li>店铺</li>
+            </ul>
+            <div class="searchContent clearfix">
+                <form action="#">
+                    <div class="searchBox fl">
+                        <input type="text">
+                        <div class="placeholder">
+                            <i class="iconfont">&#xe657;</i>
+                            <span> 男童T恤纯棉</span>
+                        </div>
+                        <span class="iconfont">&#xe519;</span>
+
+                    </div>
+                    <div class="btn fl">
+                        <button type="submit">搜索</button>
+                    </div>
+                </form>
+            </div>
+            <div class="hotKey">
+                <a href="#">新款连衣裙</a>
+                <a href="#">四件套</a>
+                <a href="#">潮流T恤</a>
+                <a href="#">时尚女鞋</a>
+                <a href="#">短裤</a>
+                <a href="#">半身裙</a>
+                <a href="#">男士外套</a>
+                <a href="#">墙纸</a>
+                <a href="#">行车记录仪</a>
+                <a href="#">新款男鞋</a>
+                <a href="#">耳机</a>
+                <a href="#">时尚女包</a>
+                <a href="#">沙发</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--首屏内容-->
+<div id="firstScreen"></div>
+<!--有好货与爱逛街-->
+<div id="layer"></div>
+<!--右侧固定定位导航-->
+<div id="tool"></div>
+</body>
+</html>

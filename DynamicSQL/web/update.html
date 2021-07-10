@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>update员工信息</title>
+    <style>
+        table{
+            border:1px solid orange;
+            width:500px;
+            border-collapse: collapse;
+        }
+        td{
+            border:1px solid orange;
+            text-align:center;
+        }
+        th{
+            border:1px solid orange;
+            color:gray;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function(){
+
+
+
+            var xmlEle = new XMLHttpRequest();
+            xmlEle.open("post","selectAllEmp",true);
+            xmlEle.onreadystatechange = function(){
+                if (xmlEle.readyState == 4 && xmlEle.status == 200) {
+                    var rtext = xmlEle.responseText;
+                    var json = JSON.parse(rtext);
+                    var empList = json.empList;
+                    var tbody = document.getElementById("tbody");
+                    for (var i = 0; i < empList.length; i++) {
+                        var trEle = document.createElement("tr");
+                        var inputEle = document.createElement("input");
+                        inputEle.type='checkbox';
+                        inputEle.name='empno';
+                        inputEle.value=empList[i].empno;
+                        trEle.appendChild(inputEle);
+                        var td0 = document.createElement("td");
+                        td0.innerHTML = empList[i].empno;
+                        var td1 = document.createElement("td");
+                        td1.innerHTML = empList[i].ename;
+                        var td2 = document.createElement("td");
+                        td2.innerHTML = empList[i].sal;
+                        var td3 = document.createElement("td");
+                        td3.innerHTML = empList[i].deptno;
+                        var td4 = document.createElement("td");
+                        td4.innerHTML = empList[i].job;
+                        //将列添加到行内
+                        trEle.appendChild(td0);
+                        trEle.appendChild(td1);
+                        trEle.appendChild(td2);
+                        trEle.appendChild(td3);
+                        trEle.appendChild(td4);
+                        //将行添加到tbody内
+                        tbody.appendChild(trEle);
+                    }
+                }
+            }
+            xmlEle.send();
+
+            //为按钮绑定单击事件
+            var updateEle = document.getElementById("update")
+            updateEle.onclick = function(){
+                var flag = window.confirm("确认更新吗？");
+                if (flag == true) {
+                    var formEle =  document.getElementById("empForm");
+                    formEle.submit();
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <form id="empForm" action="updateEmp" method="post">
+        <div align="center">
+                <input type="button" id="update" value="更新"/>
+
+        </div>
+        <table align="center">
+            <tr>
+
+            </tr>
+            <tr>
+                <th>选择</th>
+                <th>empno</th>
+                <th>ename</th>
+                <th>sal</th>
+                <th>deptno</th>
+                <th>job</th>
+            </tr>
+            <tbody id="tbody">
+
+            </tbody>
+        </table>
+    </form>
+</body>
+</html>

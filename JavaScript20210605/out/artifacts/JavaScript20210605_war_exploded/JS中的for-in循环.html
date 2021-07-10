@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js中的for-in循环</title>
+    <script>
+        var array = [1,2,3,4,5,6];
+        for(i in array){ //i数组中元素的下表，array是要遍历的数组
+            console.log(i+","+array[i]);
+        }
+
+        var obj = {uname:"dpj",age:19,sex:"男"};
+        for (i in obj) {  //i obj中属性的名字，obj是要遍历的对象。
+            console.log(i+":"+obj[i]);
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

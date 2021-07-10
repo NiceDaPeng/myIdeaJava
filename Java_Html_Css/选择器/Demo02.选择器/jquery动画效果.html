@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script type="text/javascript" src="../../libs/jquery-1.7.2.js"></script>
+  <style type="text/css">
+    div#one{
+      background-color: burlywood;
+      width: 100px;
+      height: 200px;
+      align:center;
+    }
+  </style>
+  <script type="text/javascript">
+  $(function () {
+    $("#btone").click(function () {
+      $("#one").show(1000);
+    });
+    $("#bttwo").click(function () {
+      $("#one").hide(1000);
+    });
+    $("#btthree").click(function () {
+      $("#one").toggle(1000);
+    });
+
+    $("#fadein").click(function () {
+      $("#one").fadeIn(2000);
+    });
+    $("#fadeout").click(function () {
+      $("#one").fadeOut(1000);
+    });
+    $("#fadetoggle").click(function () {
+      $("#one").fadeToggle(1000);
+    });
+    $("#fadeto").click(function () {
+      $("#one").fadeTo(1000,0.5);
+    });
+
+    var circleShow = function () {
+      $("#one").toggle(1000,circleShow);
+    }
+    circleShow();
+  })
+  </script>
+</head>
+<body>
+<div id="one">
+  展示动画效果
+</div>
+<div>
+  <button id="btone">show</button>
+  <button id="bttwo">hide</button>
+  <button id="btthree">toggle</button>
+  <button id="fadein">fadein</button>
+  <button id="fadeout">fadeout</button>
+  <button id="fadetoggle">fadetoggle</button>
+  <button id="fadeto">fadeto</button>
+</div>
+</body>
+</html>

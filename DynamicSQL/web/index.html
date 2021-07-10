@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <!--<script type="text/javascript" src="jquery-3.6.0.js"></script>-->
+    <script type="text/javascript" charset="UTF-8">
+        window.onload=function() {
+            //获取下拉列表对象
+            var deptnoSelect = document.getElementById("deptnoselect");
+            var jobSelect = document.getElementById("jobselect");
+            var btnEle = document.getElementById("selectButton");
+            //获取ajax对象
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.open("post","selectTwo",true)//打开一个ajax通道，模拟一个请求
+            xmlHttp.onreadystatechange = function () {
+                if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+                    var text = xmlHttp.responseText;
+                    // alert(text);
+                    var json = JSON.parse(text);
+                    var deptnoList = json.deptList;
+                    for (var i = 0; i < deptnoList.length; i++) {
+                        var newOptionObj = document.createElement("option");
+                        newOptionObj.value=deptnoList[i];
+                        newOptionObj.innerHTML = deptnoList[i];
+                        deptnoSelect.appendChild(newOptionObj);
+                    }
+                    var jobList = json.jobList;
+                    for (var i = 0; i < jobList.length; i++) {
+                        var newOptionObj = document.createElement("option");
+                        newOptionObj.value = jobList[i];
+                        newOptionObj.innerHTML = jobList[i];
+                        jobSelect.appendChild(newOptionObj);
+                    }
+                }
+            }
+            xmlHttp.send();
+
+           // 给按钮绑定一个单击事件
+            btnEle.onclick = function(){
+                xmlHttp.open("post","selectEmp?deptnoselect="+deptnoSelect.value+"&jobselect="+jobSelect.value);
+
+                xmlHttp.onreadystatechange = function(){
+                    if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+                        var tbody = document.getElementById("tbody");
+                        tbody.innerHTML = "";
+                        var json = JSON.parse(xmlHttp.responseText);
+                        var empList = json.empList;
+                        for (var i = 0; i < empList.length; i++) {
+
+                            var trObj = document.createElement("tr");
+                            var tdObj1 = document.createElement("td");
+                            tdObj1.innerHTML = empList[i].empno;
+                            var tdObj2 = document.createElement("td");
+                            tdObj2.innerHTML = empList[i].ename;
+                            // alert(tdObj2.innerHTML);
+                            var tdObj3 = document.createElement("td");
+                            tdObj3.innerHTML = empList[i].sal;
+                            var tdObj4 = document.createElement("td");
+                            tdObj4.innerHTML = empList[i].deptno;
+                            var tdObj5 = document.createElement("td");
+                            tdObj5.innerHTML = empList[i].job;
+
+                            trObj.appendChild(tdObj1);
+                            trObj.appendChild(tdObj2);
+                            trObj.appendChild(tdObj3);
+                            trObj.appendChild(tdObj4);
+                            trObj.appendChild(tdObj5);
+                            tbody.appendChild(trObj);
+                        }
+                    }
+                }
+                xmlHttp.send();
+            }
+        }
+    </script>
+
+    <style type="text/css">
+        table{
+            border-collapse: collapse;
+            border:1px solid orange;
+            text-align:center;
+        }
+    </style>
+</head>
+    <body>
+        <form action="" method="post">
+            <div align="center">
+            deptno
+            <select name="deptnoselect" id="deptnoselect">
+                <option value="">==请选择==</option>
+
+            </select>
+            job：
+            <select name="jobselect" id="jobselect">
+                <option value="">==请选择==</option>
+            </select>
+            <input type="button" id="selectButton" name="selectButton" value="查询">
+            </div>
+
+            <br>
+            <table id="showTable" align="center" border="1px" width="80%">
+                <tr>
+                    <th>empno</th>
+                    <th>ename</th>
+                    <th>sal</th>
+                    <th>deptno</th>
+                    <th>job</th>
+                </tr>
+                <tbody id="tbody">
+
+                </tbody>
+            </table>
+        </form>
+
+    </body>
+</html>

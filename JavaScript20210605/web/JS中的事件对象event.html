@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>event</title>
+    <script>
+        function f() {
+            // console.log(window.event);
+            var e = event || window.event;
+            console.log(e);
+            console.log(e.clientX);
+            console.log(e.clientY);
+
+        }
+
+        function f1(event) {
+            var e = window.event;
+            console.log(e.keyCode);
+        }
+
+        function f2(event) {
+            console.log("右键点击了")
+            return false;//阻止默认行为；
+        }
+
+        function f3(event){
+            console.log("父标签")
+        }
+        var date = new Date();
+        console.log(date.getDate());
+
+        function f4(event) {
+            console.log("子标签");
+            var e = event||window.event;
+            return false;//是否阻止冒泡行为；true表示阻止，false表示不阻止
+
+        }
+
+        function f5(event) {
+            var div1Ele = document.getElementById("div1");
+            var div2Ele = document.getElementById("div2");
+            div1Ele.removeChild(div2Ele);
+        }
+    </script>
+</head>
+<body>
+    <button id="btn1" onclick="f()">测试event</button>
+    <input type="text" onkeydown="f1()">
+    <button oncontextmenu="return f2()">取消默认行为</button>
+    <button id="btn2" onclick="f5()">删除div的子标签</button>
+
+    <div id="div1" style="width:100px;height:100px;background:red" onclick="" onclick="f3()">
+        <div onclick="return f4()" id="div2" style="width:50px;height:50px;border:1px solid red;background:blue"></div>
+    </div>
+</body>
+</html>

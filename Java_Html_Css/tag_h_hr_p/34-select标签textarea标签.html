@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--select定义下拉列表
+格式：<select name="" id="">
+    <option value="">
+
+    </option>
+    注意点：
+      1，下拉列表不能输入内容，但是可以直接在列表中选择内容
+      2，可以通过给option标签添加selected属性来设置下拉列表的默认值
+      3，可以通过给option包裹一层optgroup标签来给option标签进行分类
+       <optgroup label="上海">
+-->
+<form action="">
+  <select name="" id="">
+    <optgroup label="上海">
+    <option value="">黄浦区</option>
+    <option value="">浦东新区</option>
+    <option value="">嘉定区</option>
+    <option value="">长宁区</option>
+    <option value="">普陀区</option>
+    </optgroup>
+    <optgroup label="广州">
+    <option value="">天河区</option>
+    <option value="">越秀区</option>
+    <option value="">番禺区</option>
+    <option value="">黄浦区</option>
+    </optgroup>
+  </select>
+
+<!--  textarea 定义一个多行输入框
+  格式：<textarea name="" id="area" cols="30" rows="10">内容</textarea>
+  默认情况下输入框可以无限换行，
+  文本域有自己的默认的行数和列数，我们可以指定其行数和列数，这只是起始的行数和列数
+  并不影响其无限换行输入的效果。
+  文本域时可以手动拉伸的
+-->
+  <textarea name="textarea" id="area" cols="30" rows="10">内容</textarea>
+</form>
+</body>
+</html>
